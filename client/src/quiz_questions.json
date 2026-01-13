@@ -1,0 +1,702 @@
+[
+  {
+    "id": 1,
+    "question": "What is the 'ADHD effect' in marriages?",
+    "options": ["A medication side effect", "Predictable patterns created by ADHD symptoms and responses to them", "A type of therapy", "A diagnostic test"],
+    "correct": 1,
+    "explanation": "The 'ADHD effect' describes how ADHD symptoms and the responses to them create predictable patterns that can damage relationships. Both partners contribute to these patterns."
+  },
+  {
+    "id": 2,
+    "question": "According to research, people with ADHD are approximately how much more likely to divorce?",
+    "options": ["50% more likely", "Twice as likely", "Three times as likely", "No difference"],
+    "correct": 1,
+    "explanation": "Research suggests that people with ADHD are almost twice as likely to divorce compared to the general population."
+  },
+  {
+    "id": 3,
+    "question": "What is the most common and destructive pattern in ADHD marriages?",
+    "options": ["Financial disagreements", "The parent-child dynamic", "Infidelity", "Career conflicts"],
+    "correct": 1,
+    "explanation": "The parent-child dynamic, where one spouse is almost always responsible and the other rarely is, is the most common and destructive pattern in ADHD marriages."
+  },
+  {
+    "id": 4,
+    "question": "What is 'hyperfocus courtship'?",
+    "options": ["A therapy technique", "When the ADHD partner intensely focuses on their new love interest during dating", "A medication effect", "A type of couples exercise"],
+    "correct": 1,
+    "explanation": "During courtship, the ADHD partner often 'hyperfocuses' on their new love interest, showering them with attention and affection. This typically ends abruptly once the relationship becomes routine."
+  },
+  {
+    "id": 5,
+    "question": "What are the two time zones that people with ADHD typically experience?",
+    "options": ["Morning and evening", "Now and not now", "Past and future", "Work and home"],
+    "correct": 1,
+    "explanation": "For people with ADHD, there are only two time zones: 'now' and 'not now.' This 'time tunnel vision' makes planning and time management difficult."
+  },
+  {
+    "id": 6,
+    "question": "What is emotional hyper-arousal in ADHD?",
+    "options": ["Feeling sleepy", "Difficulty regulating emotions, especially negative ones", "Increased energy", "Better focus"],
+    "correct": 1,
+    "explanation": "Many people with ADHD have trouble regulating emotions, particularly on the negative side. They are easily triggered into irritability or anger over minor things."
+  },
+  {
+    "id": 7,
+    "question": "According to the book, what percentage of relationships with at least one ADHD partner are clinically dysfunctional?",
+    "options": ["25%", "40%", "58%", "75%"],
+    "correct": 2,
+    "explanation": "Research shows that 58% of relationships with at least one ADHD partner are clinically dysfunctional, which is twice the rate of non-ADHD relationships."
+  },
+  {
+    "id": 8,
+    "question": "What is a personal boundary according to the book?",
+    "options": ["A physical wall", "A value or behavior essential to living as the person you wish to be", "A legal restriction", "A type of medication"],
+    "correct": 1,
+    "explanation": "A personal boundary is defined as a value, characteristic, or behavior essential to living as the person you wish to be."
+  },
+  {
+    "id": 9,
+    "question": "What does Dr. Ned Hallowell compare living with ADHD to?",
+    "options": ["Swimming upstream", "Driving in rain with bad windshield wipers at 90 mph", "Walking through fog", "Running a marathon"],
+    "correct": 1,
+    "explanation": "Dr. Hallowell compares living with ADHD to 'driving in the rain with bad windshield wipers at 90 mph' - things are occasionally clear but most of the time it's coming fast."
+  },
+  {
+    "id": 10,
+    "question": "What is the 'three-legged stool' model of ADHD treatment?",
+    "options": ["Three different medications", "Physical changes, behavioral changes, and interaction strategies", "Three therapy sessions per week", "Three different doctors"],
+    "correct": 1,
+    "explanation": "Optimal ADHD treatment includes three legs: making physical changes (medication), making behavioral changes (habits), and developing strategies for interacting with your spouse."
+  },
+  {
+    "id": 11,
+    "question": "Why can't trust in ADHD relationships be based on whether the ADHD partner 'always follows through'?",
+    "options": ["It's not important", "Because there will always be some inconsistency due to ADHD", "Trust isn't needed", "The non-ADHD partner should do everything"],
+    "correct": 1,
+    "explanation": "Trust in ADHD relationships cannot be based on perfect follow-through because there will always be some inconsistency. Instead, trust should be based on evidence that the partner is managing ADHD to the best of their ability."
+  },
+  {
+    "id": 12,
+    "question": "What is the key message of 'Don't try harder, try differently'?",
+    "options": ["Give up trying", "Create ADHD-sensitive routines instead of just increasing effort", "Try less often", "Ignore the problem"],
+    "correct": 1,
+    "explanation": "The phrase means that instead of just trying harder with the same approaches, couples should create ADHD-sensitive routines and strategies that work with ADHD rather than against it."
+  },
+  {
+    "id": 13,
+    "question": "What is the 'Recipe for Success' system mentioned in the book?",
+    "options": ["A cooking class", "A task management system using 3x5 cards in a recipe box", "A diet plan", "A medication schedule"],
+    "correct": 1,
+    "explanation": "The Recipe for Success is a task management system using 3x5 cards in a recipe box with sections for This Week, Later, To Discuss, Done, and Blank cards."
+  },
+  {
+    "id": 14,
+    "question": "According to research, what type of activities together improve feelings more than just spending time together?",
+    "options": ["Watching TV", "New and exciting activities", "Routine activities", "Separate activities"],
+    "correct": 1,
+    "explanation": "Dr. Arthur Aron's research shows that doing new and exciting activities together improves feelings more than just spending time together."
+  },
+  {
+    "id": 15,
+    "question": "What is more powerful than showing support during difficulties according to the book?",
+    "options": ["Giving advice", "Celebrating successes", "Ignoring problems", "Criticizing mistakes"],
+    "correct": 1,
+    "explanation": "Research shows that celebrating successes is more powerful than showing support during difficulties because celebration focuses on positives while support can focus on negatives."
+  },
+  {
+    "id": 16,
+    "question": "What happens to the non-ADHD spouse in the parent-child dynamic over time?",
+    "options": ["They become happier", "They often become resentful and exhausted", "They develop ADHD", "They become more relaxed"],
+    "correct": 1,
+    "explanation": "In the parent-child dynamic, the non-ADHD spouse often becomes resentful and exhausted from carrying the bulk of responsibilities while the ADHD spouse does 'the fun stuff.'"
+  },
+  {
+    "id": 17,
+    "question": "Why is it almost impossible to be sexually attracted to someone in the parent-child dynamic?",
+    "options": ["Age difference", "Because you can't be romantically attracted to a parent figure", "Physical distance", "Lack of time"],
+    "correct": 1,
+    "explanation": "It's almost impossible to be sexually attracted to a parent figure. The parent-child dynamic undermines romantic and sexual connection in the relationship."
+  },
+  {
+    "id": 18,
+    "question": "What is 'time blindness' in ADHD?",
+    "options": ["Not being able to read clocks", "Difficulty perceiving and managing time accurately", "Sleeping too much", "Working too many hours"],
+    "correct": 1,
+    "explanation": "Time blindness refers to the difficulty people with ADHD have in perceiving and managing time accurately. They are often late and terrible judges of how long tasks will take."
+  },
+  {
+    "id": 19,
+    "question": "What is the first step in the Six Steps to a Better Relationship?",
+    "options": ["Getting medication", "Cultivating empathy for your spouse", "Setting boundaries", "Improving communication"],
+    "correct": 1,
+    "explanation": "Step 1 is Cultivating Empathy for Your Spouse - understanding what it's like to be in your partner's shoes, whether they have ADHD or not."
+  },
+  {
+    "id": 20,
+    "question": "What feeling do virtually all people with ADHD who have marital issues experience?",
+    "options": ["Happiness", "Unloved and unwanted", "Superiority", "Indifference"],
+    "correct": 1,
+    "explanation": "Virtually all people with ADHD who are currently having marital issues feel 'different,' unloved, and unwanted. They long to be accepted as they are."
+  },
+  {
+    "id": 21,
+    "question": "What is a 'learning conversation'?",
+    "options": ["A lecture", "A conversation focused on understanding each other's perspectives without judgment", "A classroom discussion", "A debate"],
+    "correct": 1,
+    "explanation": "A learning conversation is focused on understanding each other's perspectives without judgment, recognizing that partners are different and have valid viewpoints."
+  },
+  {
+    "id": 22,
+    "question": "What should non-ADHD spouses stop doing according to the book?",
+    "options": ["Working", "Diagnosing their spouse's ADHD and trying to change them", "Communicating", "Loving their spouse"],
+    "correct": 1,
+    "explanation": "Non-ADHD spouses should stop diagnosing their spouse's ADHD and trying to change them. Instead, they should focus on specific relationship issues and their own behavior."
+  },
+  {
+    "id": 23,
+    "question": "What is validation in the context of ADHD relationships?",
+    "options": ["Agreeing with everything", "Acknowledging your partner's logic and feelings even if you disagree", "Proving you're right", "Ignoring differences"],
+    "correct": 1,
+    "explanation": "Validation isn't about agreement - it's about acknowledging that your partner's logic is internally consistent and their feelings are valid, even if you disagree with the conclusion."
+  },
+  {
+    "id": 24,
+    "question": "What are the Five Core Concerns in negotiation according to Fisher and Shapiro?",
+    "options": ["Money, time, space, food, sleep", "Appreciation, Affiliation, Autonomy, Status, Role", "Love, trust, respect, honesty, loyalty", "Work, home, family, friends, health"],
+    "correct": 1,
+    "explanation": "The Five Core Concerns are: Appreciation, Affiliation, Autonomy, Status, and Role. These basic human needs stimulate emotions during negotiations."
+  },
+  {
+    "id": 25,
+    "question": "What is a verbal cue in ADHD relationships?",
+    "options": ["A type of medication", "An agreed-upon word or phrase to redirect sensitive conversations", "A hand signal", "A written note"],
+    "correct": 1,
+    "explanation": "Verbal cues are agreed-upon words or phrases that couples can use to redirect conversations that are escalating or to address sensitive topics constructively."
+  },
+  {
+    "id": 26,
+    "question": "Why do both partners need treatment in an ADHD-affected marriage?",
+    "options": ["Both have ADHD", "The non-ADHD spouse may develop depression, anxiety, or anger issues", "It's required by law", "Insurance requires it"],
+    "correct": 1,
+    "explanation": "Both partners need treatment because the non-ADHD spouse may develop depression, anxiety, chronic stress, anger, or other issues from living in a challenging relationship dynamic."
+  },
+  {
+    "id": 27,
+    "question": "What is the 'Chore Score Worksheet' used for?",
+    "options": ["Grading children's homework", "Tracking and balancing household chore distribution", "Scoring sports games", "Rating restaurants"],
+    "correct": 1,
+    "explanation": "The Chore Score Worksheet helps couples track chores with time spent, likability rating, and difficulty rating to balance distribution fairly."
+  },
+  {
+    "id": 28,
+    "question": "What does ADHD stand for?",
+    "options": ["Attention Deficit Hyperactivity Disorder", "Adult Development and Health Disorder", "Attention and Distraction Handling Difficulty", "Advanced Developmental Health Diagnosis"],
+    "correct": 0,
+    "explanation": "ADHD stands for Attention Deficit Hyperactivity Disorder, a neurological condition affecting attention, impulse control, and executive function."
+  },
+  {
+    "id": 29,
+    "question": "What is the biological basis of ADHD according to the book?",
+    "options": ["Laziness", "Dysregulation of the reward system, primarily dopamine", "Poor upbringing", "Lack of education"],
+    "correct": 1,
+    "explanation": "ADHD has a biological basis involving dysregulation of the reward system, primarily dopamine. Brain chemicals in attention areas don't function the same way as in neurotypical brains."
+  },
+  {
+    "id": 30,
+    "question": "What is impulse control like for someone with ADHD according to Dr. Hallowell?",
+    "options": ["Perfect", "Like having a race-car brain that lacks good brakes", "Slow and steady", "Nonexistent"],
+    "correct": 1,
+    "explanation": "Dr. Hallowell describes living with ADHD as having a race-car brain that lacks good brakes - the mind goes fast but has trouble stopping."
+  },
+  {
+    "id": 31,
+    "question": "What should boundaries in ADHD relationships NOT be?",
+    "options": ["Clear", "Created in response to arguments or intended to punish", "Respectful", "Consistent"],
+    "correct": 1,
+    "explanation": "Ineffective boundaries are those created in response to arguments, intended to punish or hurt, or that inhibit growth of either partner."
+  },
+  {
+    "id": 32,
+    "question": "What is the key to breaking the parent-child dynamic?",
+    "options": ["Divorce", "The ADHD spouse taking more responsibility while the non-ADHD spouse becomes less controlling", "Having children", "Moving to a new house"],
+    "correct": 1,
+    "explanation": "Breaking the parent-child dynamic requires the ADHD spouse to take more responsibility for their symptoms while the non-ADHD spouse becomes less controlling and more supportive."
+  },
+  {
+    "id": 33,
+    "question": "What is 'conflict intimacy'?",
+    "options": ["Fighting constantly", "A conversation practice where both partners speak non-aggressively and listen non-defensively", "Avoiding all conflict", "Physical intimacy after arguments"],
+    "correct": 1,
+    "explanation": "Conflict intimacy is a conversation practice where both partners speak non-aggressively while the other listens non-defensively, demonstrating equal status in the relationship."
+  },
+  {
+    "id": 34,
+    "question": "What is one of the strongest emotional desires of people with ADHD?",
+    "options": ["To be perfect", "To be accepted and loved as they are, in spite of imperfections", "To be alone", "To be in control"],
+    "correct": 1,
+    "explanation": "One of the strongest emotional desires of those with ADHD is to be loved and accepted as they are, in spite of their imperfections."
+  },
+  {
+    "id": 35,
+    "question": "What feeling do many people with ADHD hide?",
+    "options": ["Joy", "A large amount of shame", "Excitement", "Pride"],
+    "correct": 1,
+    "explanation": "Many people with ADHD hide a large amount of shame, sometimes compensating with bluster or retreat."
+  },
+  {
+    "id": 36,
+    "question": "What is the ACBD rule mentioned in the book?",
+    "options": ["A medication schedule", "Always Consult Before Deciding - to avoid autonomy conflicts", "A type of therapy", "A diet plan"],
+    "correct": 1,
+    "explanation": "ACBD stands for 'Always Consult Before Deciding' - a simple rule to avoid conflict around issues of autonomy in ADHD relationships."
+  },
+  {
+    "id": 37,
+    "question": "What happens when non-ADHD spouses 'keep score' in the relationship?",
+    "options": ["They win", "It gets them nowhere and creates resentment", "The relationship improves", "They feel better"],
+    "correct": 1,
+    "explanation": "While 'keeping score' is common in ADHD relationships, it gets couples nowhere and creates resentment. Acting consistently and thoughtfully is more effective."
+  },
+  {
+    "id": 38,
+    "question": "What is the purpose of scheduling specific times for difficult conversations?",
+    "options": ["To avoid them forever", "To lighten the atmosphere for the rest of the week", "To make them longer", "To include more people"],
+    "correct": 1,
+    "explanation": "Organizing conversations so you have specific times for hard topics lightens up the atmosphere for the rest of the week because the difficult subject isn't hanging over you all the time."
+  },
+  {
+    "id": 39,
+    "question": "What do the 'little voices' in ADHD relationships tell each partner?",
+    "options": ["Positive affirmations", "The ADHD partner fears failure; the non-ADHD partner fears everything will fall apart", "Nothing important", "To get divorced"],
+    "correct": 1,
+    "explanation": "The ADHD partner's 'little voice' suggests they might fail, while the non-ADHD partner's voice whispers 'If you don't take care of this, everything will fall apart.'"
+  },
+  {
+    "id": 40,
+    "question": "What is the best defense against the destructive 'little voices'?",
+    "options": ["Ignoring them", "Treating the ADHD effectively and creating a safe communication environment", "Listening to them", "Separating"],
+    "correct": 1,
+    "explanation": "The best defense is to treat the ADHD effectively and create an environment where it is safe to communicate even around difficult ideas."
+  },
+  {
+    "id": 41,
+    "question": "What should you do when you feel triggered by past pain in your relationship?",
+    "options": ["Blame your spouse", "Acknowledge the legitimacy of past pain while recognizing current pain doesn't mean returning to the past", "Leave immediately", "Ignore it"],
+    "correct": 1,
+    "explanation": "Acknowledge the legitimacy of your past pain, but also recognize that experiencing pain today doesn't mean you are returning to the past. You are in control of your responses now."
+  },
+  {
+    "id": 42,
+    "question": "What is the relationship between ADHD and heritability?",
+    "options": ["ADHD is not heritable", "ADHD is highly heritable - if a child has it, a parent likely does too", "ADHD skips generations", "Only mothers pass it on"],
+    "correct": 1,
+    "explanation": "ADHD is highly heritable. If a child has ADHD, there's a good chance one parent does too."
+  },
+  {
+    "id": 43,
+    "question": "What is one upside of ADHD's planning challenges?",
+    "options": ["Never having to plan", "Being really good at going with the flow and making things work in real time", "Always being late", "Avoiding responsibility"],
+    "correct": 1,
+    "explanation": "One upside is that people with ADHD can be really good at going with the flow and making things work in real time, adapting quickly to changing situations."
+  },
+  {
+    "id": 44,
+    "question": "What should the focus of boundaries be in ADHD relationships?",
+    "options": ["Controlling your spouse", "People issues, not 'thing' issues", "Material possessions", "Winning arguments"],
+    "correct": 1,
+    "explanation": "Effective boundaries focus on people issues (respect, autonomy, values) rather than 'thing' issues like specific tasks or objects."
+  },
+  {
+    "id": 45,
+    "question": "What is the Two-Day Validation Tracking exercise?",
+    "options": ["A diet plan", "A practice where couples validate each other's ideas for two days", "A medication schedule", "A sleep tracker"],
+    "correct": 1,
+    "explanation": "The Two-Day Validation Tracking exercise helps couples practice validating each other's ideas and logic patterns, even when they disagree."
+  },
+  {
+    "id": 46,
+    "question": "Why might non-ADHD spouses fantasize about leaving?",
+    "options": ["They don't love their spouse", "They dream of stability, mature decision making, and calmness", "They want to be alone", "They found someone else"],
+    "correct": 1,
+    "explanation": "Non-ADHD spouses may fantasize about leaving because they dream of stability, mature decision making, a day without overdue payments, and where calmness resides."
+  },
+  {
+    "id": 47,
+    "question": "What is the 'spinning out of control' experience for non-ADHD spouses?",
+    "options": ["Physical dizziness", "Feeling like no matter how hard they try to regain control, they feel weaker", "A fun ride", "A type of exercise"],
+    "correct": 1,
+    "explanation": "Non-ADHD spouses often describe feeling like everything is spinning out of control - no matter how hard they try to regain control, they feel weaker from the strong start they had."
+  },
+  {
+    "id": 48,
+    "question": "What does deciding NOT to treat ADHD communicate to the non-ADHD partner?",
+    "options": ["Nothing", "That the status quo is fine, leaving them with unpleasant choices", "That they are loved", "That everything will improve"],
+    "correct": 1,
+    "explanation": "Deciding not to treat ADHD is not a neutral act. It communicates that the status quo is fine, leaving the non-ADHD partner with unpleasant choices."
+  },
+  {
+    "id": 49,
+    "question": "What is the minimum treatment that should be sought if a relationship is in trouble?",
+    "options": ["No treatment needed", "The spouse with ADHD should seek treatment of some sort", "Only couples therapy", "Only medication"],
+    "correct": 1,
+    "explanation": "If your relationship is in trouble, the spouse with ADHD should seek treatment of some sort. The results of untreated ADHD land primarily on them and their relationships."
+  },
+  {
+    "id": 50,
+    "question": "What is the common misperception about behavioral changes in ADHD?",
+    "options": ["They're impossible", "That a person with ADHD can make behavioral changes without physical treatment by 'just trying harder'", "They're easy", "They don't matter"],
+    "correct": 1,
+    "explanation": "It's a common misperception that a person with ADHD can make behavioral changes without the Leg 1 (physical) changes by 'just trying harder.' People with ADHD have been trying hard all along."
+  },
+  {
+    "id": 51,
+    "question": "What is the role of medication in ADHD treatment according to the three-legged stool model?",
+    "options": ["It's the only treatment needed", "It's a jump-start that makes behavioral changes easier, but not sufficient alone", "It's unnecessary", "It replaces all other treatments"],
+    "correct": 1,
+    "explanation": "Medication is Leg 1 - it makes changing habits much easier by addressing physical brain differences, but it's not sufficient alone. Behavioral changes and interaction strategies are also needed."
+  },
+  {
+    "id": 52,
+    "question": "What should you avoid doing when your partner is talking about you?",
+    "options": ["Listening", "Becoming defensive", "Asking questions", "Staying calm"],
+    "correct": 1,
+    "explanation": "When your partner is talking about you, the natural response is to feel defensive, but the idea is to stay open. Set a verbal cue to help you calm down and open yourself back up."
+  },
+  {
+    "id": 53,
+    "question": "What is the significance of tone of voice in ADHD relationship communication?",
+    "options": ["It doesn't matter", "It's the hardest part - frustration and anger trigger defensive responses", "Only volume matters", "Tone is less important than words"],
+    "correct": 1,
+    "explanation": "Being aware of your tone of voice is the hardest part of communication. Frustration and anger trigger defensive responses, so speaking in a tone your partner can hear is crucial."
+  },
+  {
+    "id": 54,
+    "question": "What does the book say about apologies during learning conversations?",
+    "options": ["They're required", "Apologies for past actions are not required - focus on understanding", "They should be avoided forever", "They must be written"],
+    "correct": 1,
+    "explanation": "Apologies for past actions are not required during learning conversations. The focus should be on understanding each other's perspectives and feelings."
+  },
+  {
+    "id": 55,
+    "question": "What is self-loathing in the context of non-ADHD spouses?",
+    "options": ["A type of therapy", "Hating who they've become (angry, nagging, controlling)", "A medication side effect", "A positive trait"],
+    "correct": 1,
+    "explanation": "Self-loathing is an important concept for non-ADHD spouses - they often hate who they've become (angry, nagging, controlling) and dealing with it constructively is crucial."
+  },
+  {
+    "id": 56,
+    "question": "What is the 'exhaustion factor' for non-ADHD spouses?",
+    "options": ["Physical tiredness from exercise", "Being worn out from carrying the bulk of household and family responsibilities", "Tiredness from medication", "Exhaustion from work"],
+    "correct": 1,
+    "explanation": "The exhaustion factor refers to non-ADHD spouses being worn out from carrying the bulk of household and family responsibilities while often working full-time jobs."
+  },
+  {
+    "id": 57,
+    "question": "What should couples do to reinforce connection according to the book?",
+    "options": ["Work more", "Schedule time together when the only goal is to pay attention to each other", "Avoid each other", "Focus on chores"],
+    "correct": 1,
+    "explanation": "Couples should reinforce connection by scheduling time together when the only goal is to pay attention to each other, ensuring they get time together even when busy or distracted."
+  },
+  {
+    "id": 58,
+    "question": "What should come first according to the book - strengthening connections or getting things done?",
+    "options": ["Getting things done", "Strengthening connections", "Both at the same time", "Neither"],
+    "correct": 1,
+    "explanation": "Put strengthening your connections first, getting things done second. The stronger and more numerous the threads that connect you, the more easily you'll be able to share feelings and ideas."
+  },
+  {
+    "id": 59,
+    "question": "What is the relationship between ADHD and anxiety/depression?",
+    "options": ["They're unrelated", "Social pressures from ADHD can create additional conditions like anxiety or depression", "ADHD prevents anxiety", "Depression causes ADHD"],
+    "correct": 1,
+    "explanation": "Social pressures from living with ADHD can create additional conditions like anxiety or depression, which further complicate relationships."
+  },
+  {
+    "id": 60,
+    "question": "What is the 'gift' view of ADHD?",
+    "options": ["ADHD is a present", "People with ADHD have wonderful attributes that, with hard work, can help them thrive", "ADHD should be ignored", "ADHD is always negative"],
+    "correct": 1,
+    "explanation": "The 'gift' view sees ADHD as having wonderful attributes (creativity, energy, spontaneity) that, with hard work and proper management, can help people thrive."
+  },
+  {
+    "id": 61,
+    "question": "What diagnostic criteria has 95% accuracy for identifying inattentive ADHD?",
+    "options": ["Blood tests", "Fails to pay attention to details, difficulty organizing, loses things, easily distracted", "Brain scans", "Genetic testing"],
+    "correct": 1,
+    "explanation": "The diagnostic criteria with 95% accuracy includes: fails to pay close attention to details, has difficulty organizing tasks, loses things necessary for tasks, and is easily distracted."
+  },
+  {
+    "id": 62,
+    "question": "Why can't the non-ADHD spouse 'make' their partner be more organized?",
+    "options": ["They don't want to", "Behavioral changes must be voluntary; the harder one pushes, the more the other resists", "It's illegal", "They're not capable"],
+    "correct": 1,
+    "explanation": "Behavioral changes must be voluntary. The non-ADHD spouse can't 'make' their partner be more organized - the harder one pushes, the more the other resists."
+  },
+  {
+    "id": 63,
+    "question": "What is the recommended approach when the ADHD spouse's irritability spills over?",
+    "options": ["Argue back", "Create redirection verbal cues and avoid difficult topics during 'irritability' times", "Leave the room permanently", "Ignore it completely"],
+    "correct": 1,
+    "explanation": "Strategies include creating redirection verbal cues when irritability spills over and avoiding discussing difficult topics during 'irritability' times of day."
+  },
+  {
+    "id": 64,
+    "question": "What is the relationship between ADHD and sex in marriages?",
+    "options": ["No relationship", "ADHD symptoms like distraction can interfere with intimacy", "ADHD improves sex life", "Sex cures ADHD"],
+    "correct": 1,
+    "explanation": "Sex issues in ADHD marriages are often related to ADHD symptoms like distraction and inability to sustain focus. The ADHD spouse may get distracted during intimacy."
+  },
+  {
+    "id": 65,
+    "question": "What is the recommended frequency for getting a babysitter according to the book?",
+    "options": ["Never", "Often - to focus on each other", "Once a year", "Only for emergencies"],
+    "correct": 1,
+    "explanation": "The book recommends getting a babysitter often so couples can focus on each other and maintain their romantic connection."
+  },
+  {
+    "id": 66,
+    "question": "What natural ADHD trait can be built upon for relationship fun?",
+    "options": ["Forgetfulness", "Spontaneity", "Lateness", "Disorganization"],
+    "correct": 1,
+    "explanation": "Spontaneity is a natural ADHD trait that can be built upon. Reveling in spontaneity can add fun and excitement to the relationship."
+  },
+  {
+    "id": 67,
+    "question": "What is the purpose of posting photos of adventures together?",
+    "options": ["Social media likes", "To remind each other of fun times and reinforce positive memories", "To make others jealous", "For insurance purposes"],
+    "correct": 1,
+    "explanation": "Posting photos of adventures together helps remind each other of fun times and reinforces positive memories in the relationship."
+  },
+  {
+    "id": 68,
+    "question": "What is the 17 Critical Points section about?",
+    "options": ["A list of complaints", "A summary of key strategies for rebuilding ADHD-affected relationships", "Medical symptoms", "Legal requirements"],
+    "correct": 1,
+    "explanation": "The 17 Critical Points is a summary of key strategies for rebuilding ADHD-affected relationships, including treatment, communication, boundaries, and connection."
+  },
+  {
+    "id": 69,
+    "question": "What should couples do about the blame game?",
+    "options": ["Play it more", "Eradicate it completely", "Take turns", "Keep score"],
+    "correct": 1,
+    "explanation": "The book emphasizes that couples should eradicate the blame game completely. Blame is destructive and doesn't lead to positive change."
+  },
+  {
+    "id": 70,
+    "question": "What is the recommended approach to anger in ADHD relationships?",
+    "options": ["Express it freely", "Step out of the cycle of anger", "Suppress it completely", "Direct it at your spouse"],
+    "correct": 1,
+    "explanation": "The book recommends stepping out of the cycle of anger rather than continuing destructive patterns of expressing or suppressing anger."
+  },
+  {
+    "id": 71,
+    "question": "What should couples focus on instead of logistics?",
+    "options": ["Money", "Reestablishing connection and focusing on the relationship", "Work", "Chores"],
+    "correct": 1,
+    "explanation": "Couples should reestablish connection and focus on the relationship itself, not just logistics like chores and schedules."
+  },
+  {
+    "id": 72,
+    "question": "What emotions should couples be aware of according to the book?",
+    "options": ["Only happiness", "Shame and fear", "Only anger", "Indifference"],
+    "correct": 1,
+    "explanation": "Couples should be aware of shame and fear, which are powerful emotions that often drive behavior in ADHD-affected relationships."
+  },
+  {
+    "id": 73,
+    "question": "What is the gift of attention in ADHD relationships?",
+    "options": ["Expensive presents", "Validating your spouse by giving them focused attention", "Ignoring problems", "Watching TV together"],
+    "correct": 1,
+    "explanation": "The gift of attention means validating your spouse by giving them focused attention, making them feel seen and valued."
+  },
+  {
+    "id": 74,
+    "question": "What kind of help should couples seek according to the book?",
+    "options": ["Any therapist", "Help from people who understand ADHD", "No help needed", "Only medication"],
+    "correct": 1,
+    "explanation": "Couples should seek help from people who understand ADHD, as general therapists may not understand the specific dynamics of ADHD-affected relationships."
+  },
+  {
+    "id": 75,
+    "question": "What should couples remember about change?",
+    "options": ["It happens overnight", "Change takes time", "Change is impossible", "Change isn't necessary"],
+    "correct": 1,
+    "explanation": "Couples should remember that change takes time. Progress is gradual and requires patience and persistence."
+  },
+  {
+    "id": 76,
+    "question": "What should couples do about their progress?",
+    "options": ["Ignore it", "Applaud their progress and celebrate small wins", "Criticize themselves", "Compare to others"],
+    "correct": 1,
+    "explanation": "Couples should applaud their progress and celebrate small wins. Recognizing progress reinforces positive changes."
+  },
+  {
+    "id": 77,
+    "question": "What is the 'perennial toddler' description referring to?",
+    "options": ["A child", "How some non-ADHD spouses describe living with their ADHD partner", "A pet", "A therapy technique"],
+    "correct": 1,
+    "explanation": "Some non-ADHD spouses describe living with their ADHD partner as being like living with a 'perennial toddler' - wonderful but with a very different view of reality."
+  },
+  {
+    "id": 78,
+    "question": "What is the 'ADD guy' vs. true nature distinction?",
+    "options": ["Two different people", "The ADHD symptoms are 'not' the person's true personal qualities - they're actually the opposite", "A medication effect", "A therapy technique"],
+    "correct": 1,
+    "explanation": "The book emphasizes that ADHD symptoms are 'not' the person's true personal qualities - they're actually the opposite of who the person really is when ADHD is managed."
+  },
+  {
+    "id": 79,
+    "question": "What is the 'never-ending-last-minute-emergency-drop/go-never-available-for-me life'?",
+    "options": ["A fun lifestyle", "How non-ADHD spouses describe the chaos of living with untreated ADHD", "A vacation style", "A work schedule"],
+    "correct": 1,
+    "explanation": "This phrase describes how non-ADHD spouses experience the chaos of living with untreated ADHD - constant emergencies, unavailability, and unpredictability."
+  },
+  {
+    "id": 80,
+    "question": "What is the 'kill-joy wife' phenomenon?",
+    "options": ["A happy spouse", "Non-ADHD wives feeling like they're always putting a damper on their husband's fun", "A therapy technique", "A medication effect"],
+    "correct": 1,
+    "explanation": "Non-ADHD wives often feel like the 'kill-joy' who is always putting a damper on their husband's fun because they're thinking of practical things that need to be done."
+  },
+  {
+    "id": 81,
+    "question": "What is the 'single parent of 2 kids' feeling?",
+    "options": ["Having two children", "Non-ADHD spouses feeling like they're parenting alone even though they're married", "A happy family", "A therapy goal"],
+    "correct": 1,
+    "explanation": "Many non-ADHD spouses feel like a single parent even though they're married, because they carry the bulk of household and childcare responsibilities."
+  },
+  {
+    "id": 82,
+    "question": "What should couples do about autonomy?",
+    "options": ["Eliminate it", "Declare autonomy without declaring war - stay connected while respecting independence", "Ignore it", "Fight for it"],
+    "correct": 1,
+    "explanation": "Couples should declare autonomy without declaring war. Autonomy doesn't mean disconnection - it means being autonomous but connected around positive things."
+  },
+  {
+    "id": 83,
+    "question": "What is the relationship between efficiency and ADHD relationships?",
+    "options": ["Efficiency is everything", "Efficiency is relatively unimportant compared to connection, except when children are involved", "Efficiency doesn't matter", "Only ADHD partners care about efficiency"],
+    "correct": 1,
+    "explanation": "Efficiency is a relatively unimportant dimension of a relationship, except when you have small children relying on you. Connection and respect matter more."
+  },
+  {
+    "id": 84,
+    "question": "What is the 'household slave' feeling?",
+    "options": ["Enjoying housework", "Non-ADHD spouses feeling like they're doing all the work while their partner has fun", "A cleaning service", "A therapy technique"],
+    "correct": 1,
+    "explanation": "Some non-ADHD spouses describe feeling like a 'household slave' - doing all the work while their ADHD partner seems to have all the fun."
+  },
+  {
+    "id": 85,
+    "question": "What is the 'magic pill' misconception about ADHD medication?",
+    "options": ["Medication is magic", "That medication alone will solve all problems without behavioral changes", "Medication doesn't work", "Medication is dangerous"],
+    "correct": 1,
+    "explanation": "The 'magic pill' misconception is that medication alone will act as a magic pill to solve all problems. In reality, medication is only one element of treatment."
+  },
+  {
+    "id": 86,
+    "question": "What is the 'logical choice' paradox in untreated ADHD?",
+    "options": ["Logic doesn't exist", "The 'logical' choice for someone with untreated ADHD might be to not try, to avoid risking failure", "Logic is always right", "ADHD improves logic"],
+    "correct": 1,
+    "explanation": "In untreated ADHD, the 'logical' choice might be to not try and therefore not risk failure. When stakes are high, 'not trying' becomes increasingly appealing."
+  },
+  {
+    "id": 87,
+    "question": "What is the difference between 'deciding to get treatment' and 'pursuing effective treatment'?",
+    "options": ["No difference", "Deciding is the first step, but pursuing effective treatment requires active experimentation and adjustment", "They're the same thing", "Deciding is harder"],
+    "correct": 1,
+    "explanation": "Deciding to get treatment is not the same as pursuing effective treatment. ADHD treatment is a very active process requiring experimentation and adjustment."
+  },
+  {
+    "id": 88,
+    "question": "What should couples understand about ADHD traits and core concerns?",
+    "options": ["They're unrelated", "ADHD traits like living in the 'now' affect how people work through core concerns like autonomy and affiliation", "Core concerns don't matter", "ADHD eliminates core concerns"],
+    "correct": 1,
+    "explanation": "ADHD traits like living in the 'now' and difficulty anticipating the future affect how people work through core concerns like autonomy and affiliation."
+  },
+  {
+    "id": 89,
+    "question": "What is the role of a good counselor who knows about ADHD?",
+    "options": ["To prescribe medication", "To help explore issues and provide fodder for constructive brainstorming conversations", "To take sides", "To diagnose ADHD"],
+    "correct": 1,
+    "explanation": "A good counselor who knows about ADHD can help couples explore issues, provide fodder for constructive brainstorming conversations about mutual needs."
+  },
+  {
+    "id": 90,
+    "question": "What is the 'impenetrable defensive shell' response?",
+    "options": ["A type of armor", "When an ADHD partner retreats into defensiveness when triggered by past pain", "A therapy technique", "A medication effect"],
+    "correct": 1,
+    "explanation": "When triggered by past pain, an ADHD partner may retreat into an 'impenetrable defensive shell' - a protective response to memories of being belittled or yelled at."
+  },
+  {
+    "id": 91,
+    "question": "What should couples do when they have miscommunications?",
+    "options": ["Blame each other", "Acknowledge the trigger event, console each other, and be empathetic", "Ignore them", "Keep score"],
+    "correct": 1,
+    "explanation": "When miscommunications happen, couples should acknowledge the trigger event, console each other, and be empathetic about the pain it caused."
+  },
+  {
+    "id": 92,
+    "question": "What is the purpose of the 'stalemate' example in the book?",
+    "options": ["To show chess strategies", "To illustrate how couples can get stuck in unproductive patterns", "To teach a game", "To describe a medication"],
+    "correct": 1,
+    "explanation": "The 'stalemate' example illustrates how couples can get stuck in unproductive patterns where neither partner is willing to change their position."
+  },
+  {
+    "id": 93,
+    "question": "What should couples do about their partner's need for space?",
+    "options": ["Ignore it", "Respect it without giving up underlying connections", "Demand constant togetherness", "Use it as punishment"],
+    "correct": 1,
+    "explanation": "Couples should respect either partner's need for space without giving up their underlying connections. Some retreat is healthy and provides strength for future interactions."
+  },
+  {
+    "id": 94,
+    "question": "What is the relationship between ADHD and 'attention surplus disorder'?",
+    "options": ["They're the same", "Dr. Hallowell jokingly calls those without ADHD as having 'attention surplus disorder'", "It's a different condition", "It's a medication"],
+    "correct": 1,
+    "explanation": "Dr. Ned Hallowell jokingly calls those of us who don't have ADHD as having 'attention surplus disorder' - highlighting that both neurotypes have their own challenges."
+  },
+  {
+    "id": 95,
+    "question": "What is the 'house of cards in a dust storm' metaphor?",
+    "options": ["A card game", "Dr. Hallowell's description of trying to build structure while dealing with ADHD's constant distractions", "A weather report", "A building technique"],
+    "correct": 1,
+    "explanation": "Dr. Hallowell describes ADHD as 'trying to build a house of cards in a dust storm' - you have to build a structure to protect yourself from the wind before you can even start."
+  },
+  {
+    "id": 96,
+    "question": "What is the 'radio station with static' metaphor?",
+    "options": ["A music preference", "Dr. Hallowell's description of what it's like to have ADHD - straining to hear through interference", "A communication device", "A therapy technique"],
+    "correct": 1,
+    "explanation": "Dr. Hallowell describes ADHD as 'listening to a radio station with a lot of static and you have to strain to hear what's going on.'"
+  },
+  {
+    "id": 97,
+    "question": "What is the 'super-charged all the time' experience of ADHD?",
+    "options": ["Having lots of energy", "Getting one idea and having to act on it before another idea intercepts, leading to appearing disorganized", "A medication effect", "A positive trait"],
+    "correct": 1,
+    "explanation": "The 'super-charged' experience means getting one idea and having to act on it, then another idea intercepts, and another, leading to appearing disorganized and impulsive."
+  },
+  {
+    "id": 98,
+    "question": "What is the 'kit of behaviors and adaptations for basic survival' that people with ADHD develop?",
+    "options": ["Healthy coping strategies", "Often unhealthy coping mechanisms like lying, covering for mistakes, or deflecting blame", "Athletic skills", "Academic achievements"],
+    "correct": 1,
+    "explanation": "People with ADHD often develop a 'kit of behaviors' including unhealthy coping mechanisms like lying, covering for mistakes, or deflecting blame to survive years of criticism."
+  },
+  {
+    "id": 99,
+    "question": "What is the significance of 'working differently' vs. 'working harder'?",
+    "options": ["They're the same", "People with ADHD need strategies that work WITH their brain, not just more effort", "Working harder is better", "Neither works"],
+    "correct": 1,
+    "explanation": "The key insight is that people with ADHD need to work differently, not just harder. Strategies that work with their brain are more effective than simply increasing effort."
+  },
+  {
+    "id": 100,
+    "question": "What is the ultimate goal of the Six Steps according to the book?",
+    "options": ["Divorce", "To thrive and become, once again, the partners you had hoped to be", "To cure ADHD", "To assign blame"],
+    "correct": 1,
+    "explanation": "The ultimate goal is for couples to take control of ADHD together so they can thrive and become, once again, the partners they had hoped to be."
+  }
+]

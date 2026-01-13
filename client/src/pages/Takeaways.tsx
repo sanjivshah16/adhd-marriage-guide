@@ -4,6 +4,7 @@ import { ChevronLeft, ChevronRight, Lightbulb, Filter, Grid, Layers } from "luci
 import Navigation from "@/components/Navigation";
 import { Button } from "@/components/ui/button";
 import { keyTakeaways, takeawayCategories } from "@/data";
+import OptimizedImage, { useImagePreloader } from "@/components/OptimizedImage";
 import {
   Select,
   SelectContent,
@@ -17,6 +18,9 @@ import {
  * - 40 visual cards with generated images
  * - Swipeable gallery with smooth transitions
  * - Grid and single card view modes
+ * - Lazy loading for grid view
+ * - Image preloading for smooth card navigation
+ * - Skeleton placeholders while loading
  */
 
 export default function Takeaways() {
@@ -30,6 +34,15 @@ export default function Takeaways() {
   }, [selectedCategory]);
 
   const currentTakeaway = filteredTakeaways[currentIndex];
+
+  // Get all image URLs for preloading
+  const imageUrls = useMemo(() => 
+    filteredTakeaways.map(t => t.image), 
+    [filteredTakeaways]
+  );
+
+  // Preload adjacent images for smooth navigation
+  useImagePreloader(imageUrls, currentIndex, 2);
 
   const handleNext = () => {
     if (currentIndex < filteredTakeaways.length - 1) {
@@ -142,14 +155,15 @@ export default function Takeaways() {
                   className="max-w-2xl mx-auto"
                 >
                   <div className="bg-card rounded-3xl border border-border shadow-xl overflow-hidden">
-                    {/* Image */}
-                    <div className="relative aspect-[4/3] overflow-hidden">
-                      <img
+                    {/* Image with skeleton and preloading */}
+                    <div className="relative">
+                      <OptimizedImage
                         src={currentTakeaway.image}
                         alt={currentTakeaway.title}
-                        className="w-full h-full object-cover"
+                        aspectRatio="aspect-[4/3]"
+                        priority={true}
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-charcoal/60 via-transparent to-transparent" />
+                      <div className="absolute inset-0 bg-gradient-to-t from-charcoal/60 via-transparent to-transparent pointer-events-none" />
                       <div className="absolute bottom-4 left-4 right-4">
                         <span className="inline-block px-3 py-1 rounded-full bg-cream/90 text-charcoal font-body text-xs font-medium mb-2">
                           {currentTakeaway.category}
@@ -219,7 +233,7 @@ export default function Takeaways() {
             </>
           )}
 
-          {/* Grid View */}
+          {/* Grid View with Lazy Loading */}
           {viewMode === "grid" && (
             <motion.div
               initial={{ opacity: 0 }}
@@ -232,7 +246,7 @@ export default function Takeaways() {
                   key={takeaway.id}
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.4, delay: index * 0.05 }}
+                  transition={{ duration: 0.4, delay: Math.min(index * 0.05, 0.5) }}
                   onClick={() => {
                     setCurrentIndex(index);
                     setViewMode("single");
@@ -240,14 +254,16 @@ export default function Takeaways() {
                   className="group cursor-pointer"
                 >
                   <div className="bg-card rounded-2xl border border-border shadow-md overflow-hidden transition-all duration-500 hover:shadow-xl hover:-translate-y-1 hover:border-sage/30">
-                    {/* Image */}
-                    <div className="relative aspect-[4/3] overflow-hidden">
-                      <img
+                    {/* Image with lazy loading and skeleton */}
+                    <div className="relative">
+                      <OptimizedImage
                         src={takeaway.image}
                         alt={takeaway.title}
-                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                        aspectRatio="aspect-[4/3]"
+                        className="transition-transform duration-500 group-hover:scale-105"
+                        priority={index < 6} // Load first 6 images immediately
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-charcoal/60 via-transparent to-transparent" />
+                      <div className="absolute inset-0 bg-gradient-to-t from-charcoal/60 via-transparent to-transparent pointer-events-none" />
                       <div className="absolute bottom-3 left-3 right-3">
                         <span className="inline-block px-2 py-0.5 rounded-full bg-cream/90 text-charcoal font-body text-xs font-medium mb-1">
                           {takeaway.category}

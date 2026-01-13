@@ -1,6 +1,7 @@
 import { Link } from "wouter";
 import { motion } from "framer-motion";
 import { Brain, BookOpen, Lightbulb, FileText, Wrench, ArrowRight, Heart, Users, Sparkles } from "lucide-react";
+import OptimizedImage from "@/components/OptimizedImage";
 import Navigation from "@/components/Navigation";
 import { Button } from "@/components/ui/button";
 
@@ -123,12 +124,13 @@ export default function Home() {
               className="relative"
             >
               <div className="relative rounded-3xl overflow-hidden shadow-2xl shadow-charcoal/10">
-                <img 
+                <OptimizedImage 
                   src="/images/hero-main.webp" 
                   alt="Couple in peaceful Japandi setting"
-                  className="w-full h-auto object-cover"
+                  aspectRatio="aspect-[4/3]"
+                  priority={true}
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-charcoal/20 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-charcoal/20 to-transparent pointer-events-none" />
               </div>
               
               {/* Floating card */}

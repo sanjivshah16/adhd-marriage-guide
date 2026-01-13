@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { BookOpen, ChevronRight, ArrowLeft } from "lucide-react";
+import OptimizedImage from "@/components/OptimizedImage";
 import Navigation from "@/components/Navigation";
 import { Button } from "@/components/ui/button";
 import { bookSummary } from "@/data";
@@ -206,10 +207,11 @@ export default function Summaries() {
                 className="sticky top-24"
               >
                 <div className="rounded-2xl overflow-hidden shadow-lg mb-6">
-                  <img 
+                  <OptimizedImage 
                     src="/images/hero-resources.webp" 
                     alt="ADHD Marriage Resources"
-                    className="w-full h-auto"
+                    aspectRatio="aspect-[4/3]"
+                    priority={true}
                   />
                 </div>
                 

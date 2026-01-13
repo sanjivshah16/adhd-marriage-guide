@@ -9,82 +9,140 @@ import { Link } from "wouter";
 /* 
  * Tulum Sanctuary Summaries Page
  * - Book summaries with expandable sections
- * - Proper rendering of numbered lists
+ * - Proper rendering of numbered lists with correct sequential numbering
  * - Reading-focused typography
  */
 
 // Function to render content with proper formatting for numbered lists
-function renderContent(content: string) {
+// This version properly handles numbered items with sub-bullets
+function renderContent(content: string): React.ReactNode[] {
   const lines = content.split('\n');
   const elements: React.ReactNode[] = [];
-  let currentList: string[] = [];
-  let listType: 'numbered' | 'bullet' | null = null;
-  let listKey = 0;
+  let elementKey = 0;
 
-  const flushList = () => {
-    if (currentList.length > 0 && listType) {
-      if (listType === 'numbered') {
-        elements.push(
-          <ol key={`list-${listKey++}`} className="list-decimal list-outside ml-6 space-y-2 my-4">
-            {currentList.map((item, idx) => (
-              <li key={idx} className="font-body text-muted-foreground leading-relaxed pl-2">
-                {item}
-              </li>
-            ))}
-          </ol>
-        );
-      } else {
-        elements.push(
-          <ul key={`list-${listKey++}`} className="list-disc list-outside ml-6 space-y-2 my-4">
-            {currentList.map((item, idx) => (
-              <li key={idx} className="font-body text-muted-foreground leading-relaxed pl-2">
-                {item}
-              </li>
-            ))}
-          </ul>
-        );
-      }
-      currentList = [];
-      listType = null;
+  // Track numbered items with their sub-bullets
+  interface NumberedItem {
+    number: string;
+    text: string;
+    subItems: string[];
+  }
+  
+  let currentNumberedList: NumberedItem[] = [];
+  let currentBulletList: string[] = [];
+  let lastNumberedItem: NumberedItem | null = null;
+
+  const flushNumberedList = () => {
+    if (currentNumberedList.length > 0) {
+      elements.push(
+        <ol key={`ol-${elementKey++}`} className="space-y-3 my-4">
+          {currentNumberedList.map((item, idx) => (
+            <li key={idx} className="font-body text-muted-foreground leading-relaxed">
+              <div className="flex gap-3">
+                <span className="font-semibold text-foreground min-w-[1.5rem]">{item.number}.</span>
+                <div className="flex-1">
+                  <span>{item.text}</span>
+                  {item.subItems.length > 0 && (
+                    <ul className="list-disc list-outside ml-5 mt-2 space-y-1">
+                      {item.subItems.map((subItem, subIdx) => (
+                        <li key={subIdx} className="text-muted-foreground">{subItem}</li>
+                      ))}
+                    </ul>
+                  )}
+                </div>
+              </div>
+            </li>
+          ))}
+        </ol>
+      );
+      currentNumberedList = [];
+      lastNumberedItem = null;
     }
   };
 
-  lines.forEach((line, index) => {
+  const flushBulletList = () => {
+    if (currentBulletList.length > 0) {
+      elements.push(
+        <ul key={`ul-${elementKey++}`} className="list-disc list-outside ml-6 space-y-2 my-4">
+          {currentBulletList.map((item, idx) => (
+            <li key={idx} className="font-body text-muted-foreground leading-relaxed pl-2">
+              {item}
+            </li>
+          ))}
+        </ul>
+      );
+      currentBulletList = [];
+    }
+  };
+
+  lines.forEach((line) => {
     const trimmedLine = line.trim();
     
-    // Check for numbered list item (e.g., "1. ", "2. ", etc.)
+    // Check for numbered list item (e.g., "1. ", "2. ", "10. ", etc.)
     const numberedMatch = trimmedLine.match(/^(\d+)\.\s+(.+)$/);
-    // Check for bullet list item (e.g., "- ", "* ")
+    // Check for bullet/sub-item (e.g., "- ", "* ")
     const bulletMatch = trimmedLine.match(/^[-*]\s+(.+)$/);
     
     if (numberedMatch) {
-      if (listType !== 'numbered') {
-        flushList();
-        listType = 'numbered';
+      // Flush any standalone bullet list first
+      if (currentBulletList.length > 0 && !lastNumberedItem) {
+        flushBulletList();
       }
-      currentList.push(numberedMatch[2]);
+      
+      // If we have a current numbered item, save it
+      if (lastNumberedItem) {
+        currentNumberedList.push(lastNumberedItem);
+      }
+      
+      // Start a new numbered item
+      lastNumberedItem = {
+        number: numberedMatch[1],
+        text: numberedMatch[2],
+        subItems: []
+      };
     } else if (bulletMatch) {
-      if (listType !== 'bullet') {
-        flushList();
-        listType = 'bullet';
+      // This is a sub-item
+      if (lastNumberedItem) {
+        // Add as sub-item to current numbered item
+        lastNumberedItem.subItems.push(bulletMatch[1]);
+      } else {
+        // Standalone bullet list
+        flushNumberedList();
+        currentBulletList.push(bulletMatch[1]);
       }
-      currentList.push(bulletMatch[1]);
     } else if (trimmedLine === '') {
-      // Empty line - might be separating paragraphs or sections
-      flushList();
+      // Empty line - might be separating sections
+      // Save current numbered item if exists
+      if (lastNumberedItem) {
+        currentNumberedList.push(lastNumberedItem);
+        lastNumberedItem = null;
+      }
+      // Don't flush yet - wait to see if more items follow
     } else {
       // Regular paragraph text
-      flushList();
+      // First, save any pending numbered item
+      if (lastNumberedItem) {
+        currentNumberedList.push(lastNumberedItem);
+        lastNumberedItem = null;
+      }
+      
+      // Flush lists
+      flushNumberedList();
+      flushBulletList();
+      
       elements.push(
-        <p key={`p-${index}`} className="font-body text-muted-foreground leading-relaxed mb-4">
+        <p key={`p-${elementKey++}`} className="font-body text-muted-foreground leading-relaxed mb-4">
           {trimmedLine}
         </p>
       );
     }
   });
 
-  // Flush any remaining list
-  flushList();
+  // Flush any remaining items
+  if (lastNumberedItem) {
+    currentNumberedList.push(lastNumberedItem);
+  }
+  flushNumberedList();
+  flushBulletList();
 
   return elements;
 }
@@ -98,182 +156,154 @@ export default function Summaries() {
       
       {/* Hero Section */}
       <section className="pt-24 md:pt-32 pb-8 md:pb-12 relative overflow-hidden">
-        {/* Background decoration */}
-        <div className="absolute top-0 right-0 w-1/3 h-full opacity-20 pointer-events-none">
-          <div className="absolute top-20 right-10 w-48 h-48 bg-terracotta/30 rounded-full blur-3xl" />
-        </div>
+        {/* Decorative elements */}
+        <div className="absolute top-20 right-0 w-64 h-64 bg-accent/20 rounded-full blur-3xl -z-10" />
+        <div className="absolute bottom-0 left-0 w-48 h-48 bg-primary/10 rounded-full blur-3xl -z-10" />
         
-        <div className="container relative">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="max-w-3xl"
-          >
-            <Link href="/" className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors mb-6">
-              <ArrowLeft className="w-4 h-4" />
-              <span className="font-body text-sm">Back to Home</span>
-            </Link>
-            
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-terracotta/10 text-terracotta mb-6">
-              <BookOpen className="w-4 h-4" />
-              <span className="font-body text-sm font-medium">Book Summaries</span>
-            </div>
-            <h1 className="font-display text-3xl md:text-4xl lg:text-5xl font-semibold text-foreground mb-4">
-              Understanding the <span className="text-terracotta">ADHD Effect</span>
-            </h1>
-            <p className="font-body text-lg text-muted-foreground leading-relaxed">
-              Comprehensive summaries of key concepts and strategies for thriving in ADHD-affected relationships. Now with {bookSummary.sections.length} in-depth sections covering all aspects of the book.
-            </p>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Hero Image */}
-      <section className="pb-8">
         <div className="container">
-          <motion.div
-            initial={{ opacity: 0, scale: 0.98 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="rounded-3xl overflow-hidden shadow-xl max-w-4xl"
-          >
-            <img 
-              src="/images/hero-resources.png" 
-              alt="Research and resources illustration"
-              className="w-full h-auto"
-            />
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Overview Section */}
-      <section className="py-8 md:py-12">
-        <div className="container max-w-4xl">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.3 }}
-            className="bg-card rounded-3xl border border-border p-6 md:p-10 shadow-lg"
-          >
-            <h2 className="font-display text-2xl md:text-3xl font-semibold text-foreground mb-6">
-              {bookSummary.overview.title}
-            </h2>
-            <p className="font-body text-lg text-muted-foreground leading-relaxed">
-              {bookSummary.overview.content}
-            </p>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Sections */}
-      <section className="py-8 md:py-12 pb-16 md:pb-24">
-        <div className="container max-w-4xl">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.4 }}
-            className="flex items-center justify-between mb-8"
-          >
-            <h2 className="font-display text-2xl md:text-3xl font-semibold text-foreground">
-              Key Sections
-            </h2>
-            <span className="font-body text-sm text-muted-foreground bg-sage/20 px-3 py-1 rounded-full">
-              {bookSummary.sections.length} sections
-            </span>
-          </motion.div>
-          
-          <div className="space-y-4">
-            {bookSummary.sections.map((section, index) => (
-              <motion.div
-                key={section.id}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.4, delay: 0.05 * Math.min(index, 10) }}
-              >
-                <div
-                  className={`
-                    bg-card rounded-2xl border border-border overflow-hidden
-                    transition-all duration-500
-                    ${expandedSection === section.id ? "shadow-xl" : "shadow-md hover:shadow-lg"}
-                  `}
-                >
-                  <button
-                    onClick={() => setExpandedSection(
-                      expandedSection === section.id ? null : section.id
-                    )}
-                    className="w-full p-5 md:p-6 flex items-center justify-between text-left group"
-                  >
-                    <div className="flex items-center gap-4">
-                      <div className={`
-                        w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0
-                        transition-colors duration-300
-                        ${expandedSection === section.id 
-                          ? "bg-terracotta text-cream" 
-                          : "bg-terracotta/10 text-terracotta group-hover:bg-terracotta/20"
-                        }
-                      `}>
-                        <span className="font-display text-lg font-semibold">{section.id}</span>
-                      </div>
-                      <h3 className="font-display text-lg md:text-xl font-semibold text-foreground group-hover:text-terracotta transition-colors duration-300">
-                        {section.title}
-                      </h3>
-                    </div>
-                    <ChevronRight className={`
-                      w-5 h-5 text-muted-foreground flex-shrink-0
-                      transition-transform duration-300
-                      ${expandedSection === section.id ? "rotate-90" : ""}
-                    `} />
-                  </button>
-                  
-                  <motion.div
-                    initial={false}
-                    animate={{
-                      height: expandedSection === section.id ? "auto" : 0,
-                      opacity: expandedSection === section.id ? 1 : 0,
-                    }}
-                    transition={{ duration: 0.4, ease: [0.4, 0, 0.2, 1] }}
-                    className="overflow-hidden"
-                  >
-                    <div className="px-5 md:px-6 pb-6 pt-0">
-                      <div className="pl-14 border-l-2 border-terracotta/20">
-                        {renderContent(section.content)}
-                      </div>
-                    </div>
-                  </motion.div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="py-12 md:py-16 bg-sand/50">
-        <div className="container">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-            className="max-w-2xl mx-auto text-center"
-          >
-            <h2 className="font-display text-2xl md:text-3xl font-semibold text-foreground mb-4">
-              Ready to Test Your Knowledge?
-            </h2>
-            <p className="font-body text-muted-foreground mb-6">
-              Take our 100-question quiz to reinforce what you've learned.
-            </p>
-            <Link href="/quiz">
-              <Button 
-                size="lg" 
-                className="bg-terracotta hover:bg-terracotta/90 text-cream font-body font-medium px-8 py-6 rounded-full"
-              >
-                Take the Quiz
-                <ChevronRight className="w-5 h-5 ml-2" />
+          {/* Breadcrumb */}
+          <div className="flex items-center gap-2 text-sm text-muted-foreground mb-6">
+            <Link href="/">
+              <Button variant="ghost" size="sm" className="gap-2 -ml-3">
+                <ArrowLeft className="h-4 w-4" />
+                Back to Home
               </Button>
             </Link>
+            <span>/</span>
+            <span className="flex items-center gap-1.5">
+              <BookOpen className="h-4 w-4" />
+              Book Summaries
+            </span>
+          </div>
+          
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="max-w-2xl"
+          >
+            <h1 className="font-display text-4xl md:text-5xl font-bold text-foreground mb-4">
+              Understanding the{" "}
+              <span className="text-primary">ADHD Effect</span>
+            </h1>
+            <p className="font-body text-lg text-muted-foreground">
+              Comprehensive summaries of key concepts and strategies for thriving in ADHD-affected relationships. Now with 24 in-depth sections covering all aspects of the book.
+            </p>
           </motion.div>
+        </div>
+      </section>
+
+      {/* Main Content */}
+      <section className="py-8 md:py-12">
+        <div className="container">
+          <div className="grid lg:grid-cols-3 gap-8">
+            {/* Sidebar with image */}
+            <div className="lg:col-span-1">
+              <motion.div
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                className="sticky top-24"
+              >
+                <div className="rounded-2xl overflow-hidden shadow-lg mb-6">
+                  <img 
+                    src="/images/hero-resources.png" 
+                    alt="ADHD Marriage Resources"
+                    className="w-full h-auto"
+                  />
+                </div>
+                
+                {/* Overview Card */}
+                <div className="bg-card rounded-2xl p-6 shadow-sm border border-border">
+                  <h3 className="font-display text-xl font-semibold text-foreground mb-3">
+                    {bookSummary.overview.title}
+                  </h3>
+                  <p className="font-body text-sm text-muted-foreground leading-relaxed">
+                    {bookSummary.overview.content}
+                  </p>
+                </div>
+              </motion.div>
+            </div>
+
+            {/* Sections List */}
+            <div className="lg:col-span-2">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.3 }}
+                className="space-y-4"
+              >
+                {bookSummary.sections.map((section, index) => (
+                  <motion.div
+                    key={section.id}
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.4, delay: 0.1 * Math.min(index, 5) }}
+                  >
+                    <button
+                      onClick={() => setExpandedSection(expandedSection === section.id ? null : section.id)}
+                      className={`w-full text-left p-5 rounded-xl border transition-all duration-300 ${
+                        expandedSection === section.id
+                          ? "bg-card border-primary/30 shadow-md"
+                          : "bg-card/50 border-border hover:bg-card hover:border-primary/20 hover:shadow-sm"
+                      }`}
+                    >
+                      <div className="flex items-center justify-between">
+                        <div className="flex items-center gap-4">
+                          <span className={`w-8 h-8 rounded-full flex items-center justify-center text-sm font-medium transition-colors ${
+                            expandedSection === section.id
+                              ? "bg-primary text-primary-foreground"
+                              : "bg-accent text-accent-foreground"
+                          }`}>
+                            {index + 1}
+                          </span>
+                          <h3 className="font-display text-lg font-medium text-foreground">
+                            {section.title}
+                          </h3>
+                        </div>
+                        <ChevronRight className={`h-5 w-5 text-muted-foreground transition-transform duration-300 ${
+                          expandedSection === section.id ? "rotate-90" : ""
+                        }`} />
+                      </div>
+                    </button>
+                    
+                    {/* Expanded Content */}
+                    {expandedSection === section.id && (
+                      <motion.div
+                        initial={{ opacity: 0, height: 0 }}
+                        animate={{ opacity: 1, height: "auto" }}
+                        exit={{ opacity: 0, height: 0 }}
+                        transition={{ duration: 0.3 }}
+                        className="mt-2 p-6 bg-background rounded-xl border border-border/50"
+                      >
+                        <div className="prose prose-stone max-w-none">
+                          {renderContent(section.content)}
+                        </div>
+                      </motion.div>
+                    )}
+                  </motion.div>
+                ))}
+              </motion.div>
+
+              {/* CTA */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.5 }}
+                className="mt-12 text-center"
+              >
+                <p className="font-body text-muted-foreground mb-4">
+                  Ready to test your knowledge?
+                </p>
+                <Link href="/quiz">
+                  <Button size="lg" className="gap-2">
+                    Take the Quiz
+                    <ChevronRight className="h-4 w-4" />
+                  </Button>
+                </Link>
+              </motion.div>
+            </div>
+          </div>
         </div>
       </section>
     </div>

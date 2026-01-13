@@ -15,7 +15,7 @@ const navItems = [
   { path: "/summaries", label: "Summaries", icon: BookOpen },
   { path: "/quiz", label: "Quiz", icon: Brain },
   { path: "/takeaways", label: "Key Insights", icon: Lightbulb },
-  { path: "/resources", label: "Research", icon: FileText },
+  { path: "/resources", label: "Resources", icon: FileText },
   { path: "/tools", label: "Tools", icon: Wrench },
 ];
 

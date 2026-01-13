@@ -14,9 +14,9 @@ import {
 
 /* 
  * Tulum Sanctuary Resources Page
- * - Research library with 25+ resources
+ * - Research library with 27 resources
  * - Filterable by type with search
- * - Clean card layout
+ * - Full summaries visible
  */
 
 const typeIcons: Record<string, typeof FileText> = {
@@ -67,7 +67,7 @@ export default function Resources() {
           >
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-sage/10 text-sage mb-6">
               <FileText className="w-4 h-4" />
-              <span className="font-body text-sm font-medium">27 Research Resources</span>
+              <span className="font-body text-sm font-medium">27 Resources</span>
             </div>
             <h1 className="font-display text-3xl md:text-4xl lg:text-5xl font-semibold text-foreground mb-4">
               Further <span className="text-sage">Reading</span>
@@ -151,7 +151,7 @@ export default function Resources() {
                       {/* Content */}
                       <div className="flex-1 min-w-0">
                         <div className="flex items-start justify-between gap-4 mb-2">
-                          <h3 className="font-display text-lg font-semibold text-foreground group-hover:text-sage transition-colors duration-300 line-clamp-2">
+                          <h3 className="font-display text-lg font-semibold text-foreground group-hover:text-sage transition-colors duration-300">
                             {resource.title}
                           </h3>
                           <ExternalLink className="w-4 h-4 text-muted-foreground flex-shrink-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
@@ -170,7 +170,8 @@ export default function Resources() {
                           </span>
                         </div>
                         
-                        <p className="font-body text-sm text-muted-foreground leading-relaxed line-clamp-2">
+                        {/* Full summary - no truncation */}
+                        <p className="font-body text-sm text-muted-foreground leading-relaxed">
                           {resource.summary}
                         </p>
                       </div>

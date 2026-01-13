@@ -1,6 +1,6 @@
-import { useState, useMemo } from "react";
+import { useState, useMemo, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ChevronLeft, ChevronRight, Check, X, RotateCcw, Filter, Trophy, Brain } from "lucide-react";
+import { ChevronLeft, ChevronRight, Check, X, RotateCcw, Filter, Trophy, Brain, Shuffle } from "lucide-react";
 import Navigation from "@/components/Navigation";
 import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
@@ -18,7 +18,18 @@ import {
  * - Flashcard-style quiz with instant feedback
  * - Organic shapes and warm colors
  * - Smooth card flip animations
+ * - Shuffle functionality for randomized question order
  */
+
+// Fisher-Yates shuffle algorithm
+function shuffleArray<T>(array: T[]): T[] {
+  const shuffled = [...array];
+  for (let i = shuffled.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+  }
+  return shuffled;
+}
 
 export default function Quiz() {
   const [selectedCategory, setSelectedCategory] = useState("All");
@@ -27,11 +38,21 @@ export default function Quiz() {
   const [showExplanation, setShowExplanation] = useState(false);
   const [score, setScore] = useState(0);
   const [answeredQuestions, setAnsweredQuestions] = useState<Set<number>>(new Set());
+  const [shuffledQuestions, setShuffledQuestions] = useState<typeof quizQuestions | null>(null);
+  const [isShuffled, setIsShuffled] = useState(false);
 
-  const filteredQuestions = useMemo(() => {
+  const baseFilteredQuestions = useMemo(() => {
     if (selectedCategory === "All") return quizQuestions;
     return quizQuestions.filter(q => q.category === selectedCategory);
   }, [selectedCategory]);
+
+  const filteredQuestions = useMemo(() => {
+    if (isShuffled && shuffledQuestions) {
+      if (selectedCategory === "All") return shuffledQuestions;
+      return shuffledQuestions.filter(q => q.category === selectedCategory);
+    }
+    return baseFilteredQuestions;
+  }, [selectedCategory, isShuffled, shuffledQuestions, baseFilteredQuestions]);
 
   const currentQuestion = filteredQuestions[currentIndex];
   const progress = ((currentIndex + 1) / filteredQuestions.length) * 100;
@@ -72,13 +93,34 @@ export default function Quiz() {
     setShowExplanation(false);
     setScore(0);
     setAnsweredQuestions(new Set());
+    setShuffledQuestions(null);
+    setIsShuffled(false);
   };
+
+  const handleShuffle = useCallback(() => {
+    const questionsToShuffle = selectedCategory === "All" 
+      ? quizQuestions 
+      : quizQuestions.filter(q => q.category === selectedCategory);
+    
+    setShuffledQuestions(shuffleArray(questionsToShuffle));
+    setIsShuffled(true);
+    setCurrentIndex(0);
+    setSelectedAnswer(null);
+    setShowExplanation(false);
+  }, [selectedCategory]);
 
   const handleCategoryChange = (value: string) => {
     setSelectedCategory(value);
     setCurrentIndex(0);
     setSelectedAnswer(null);
     setShowExplanation(false);
+    // Reset shuffle when category changes
+    if (isShuffled) {
+      const newFiltered = value === "All" 
+        ? quizQuestions 
+        : quizQuestions.filter(q => q.category === value);
+      setShuffledQuestions(shuffleArray(newFiltered));
+    }
   };
 
   return (
@@ -134,13 +176,23 @@ export default function Quiz() {
               </Select>
             </div>
             
-            <div className="flex items-center gap-4">
+            <div className="flex items-center gap-3">
               <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-sage/10">
                 <Trophy className="w-4 h-4 text-sage" />
                 <span className="font-body text-sm font-medium text-sage">
                   {score} / {answeredQuestions.size}
                 </span>
               </div>
+              <Button
+                variant="outline"
+                size="sm"
+                onClick={handleShuffle}
+                className={`rounded-full ${isShuffled ? 'bg-terracotta/10 border-terracotta text-terracotta' : ''}`}
+                title="Shuffle questions"
+              >
+                <Shuffle className="w-4 h-4 mr-2" />
+                Shuffle
+              </Button>
               <Button
                 variant="outline"
                 size="sm"
@@ -152,6 +204,20 @@ export default function Quiz() {
               </Button>
             </div>
           </motion.div>
+
+          {/* Shuffle indicator */}
+          {isShuffled && (
+            <motion.div
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: "auto" }}
+              className="mb-4 text-center"
+            >
+              <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-terracotta/10 text-terracotta font-body text-sm">
+                <Shuffle className="w-3 h-3" />
+                Questions shuffled
+              </span>
+            </motion.div>
+          )}
 
           {/* Progress */}
           <motion.div
@@ -267,6 +333,10 @@ export default function Quiz() {
                             selectedAnswer === currentQuestion.correctAnswer ? "text-sage" : "text-terracotta"
                           }`}>
                             {selectedAnswer === currentQuestion.correctAnswer ? "Correct!" : "Not quite right"}
+                          </p>
+                          <p className="font-body text-muted-foreground leading-relaxed mb-3">
+                            <span className="font-semibold text-foreground">The correct answer is: </span>
+                            {currentQuestion.options[currentQuestion.correctAnswer]}
                           </p>
                           <p className="font-body text-muted-foreground leading-relaxed">
                             {currentQuestion.explanation}

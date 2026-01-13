@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { BookOpen, ChevronRight, ArrowLeft } from "lucide-react";
 import Navigation from "@/components/Navigation";
@@ -9,9 +9,85 @@ import { Link } from "wouter";
 /* 
  * Tulum Sanctuary Summaries Page
  * - Book summaries with expandable sections
- * - Organic layout with warm colors
+ * - Proper rendering of numbered lists
  * - Reading-focused typography
  */
+
+// Function to render content with proper formatting for numbered lists
+function renderContent(content: string) {
+  const lines = content.split('\n');
+  const elements: React.ReactNode[] = [];
+  let currentList: string[] = [];
+  let listType: 'numbered' | 'bullet' | null = null;
+  let listKey = 0;
+
+  const flushList = () => {
+    if (currentList.length > 0 && listType) {
+      if (listType === 'numbered') {
+        elements.push(
+          <ol key={`list-${listKey++}`} className="list-decimal list-outside ml-6 space-y-2 my-4">
+            {currentList.map((item, idx) => (
+              <li key={idx} className="font-body text-muted-foreground leading-relaxed pl-2">
+                {item}
+              </li>
+            ))}
+          </ol>
+        );
+      } else {
+        elements.push(
+          <ul key={`list-${listKey++}`} className="list-disc list-outside ml-6 space-y-2 my-4">
+            {currentList.map((item, idx) => (
+              <li key={idx} className="font-body text-muted-foreground leading-relaxed pl-2">
+                {item}
+              </li>
+            ))}
+          </ul>
+        );
+      }
+      currentList = [];
+      listType = null;
+    }
+  };
+
+  lines.forEach((line, index) => {
+    const trimmedLine = line.trim();
+    
+    // Check for numbered list item (e.g., "1. ", "2. ", etc.)
+    const numberedMatch = trimmedLine.match(/^(\d+)\.\s+(.+)$/);
+    // Check for bullet list item (e.g., "- ", "* ")
+    const bulletMatch = trimmedLine.match(/^[-*]\s+(.+)$/);
+    
+    if (numberedMatch) {
+      if (listType !== 'numbered') {
+        flushList();
+        listType = 'numbered';
+      }
+      currentList.push(numberedMatch[2]);
+    } else if (bulletMatch) {
+      if (listType !== 'bullet') {
+        flushList();
+        listType = 'bullet';
+      }
+      currentList.push(bulletMatch[1]);
+    } else if (trimmedLine === '') {
+      // Empty line - might be separating paragraphs or sections
+      flushList();
+    } else {
+      // Regular paragraph text
+      flushList();
+      elements.push(
+        <p key={`p-${index}`} className="font-body text-muted-foreground leading-relaxed mb-4">
+          {trimmedLine}
+        </p>
+      );
+    }
+  });
+
+  // Flush any remaining list
+  flushList();
+
+  return elements;
+}
 
 export default function Summaries() {
   const [expandedSection, setExpandedSection] = useState<number | null>(null);
@@ -47,7 +123,7 @@ export default function Summaries() {
               Understanding the <span className="text-terracotta">ADHD Effect</span>
             </h1>
             <p className="font-body text-lg text-muted-foreground leading-relaxed">
-              Comprehensive summaries of key concepts and strategies for thriving in ADHD-affected relationships.
+              Comprehensive summaries of key concepts and strategies for thriving in ADHD-affected relationships. Now with {bookSummary.sections.length} in-depth sections covering all aspects of the book.
             </p>
           </motion.div>
         </div>
@@ -93,14 +169,19 @@ export default function Summaries() {
       {/* Sections */}
       <section className="py-8 md:py-12 pb-16 md:pb-24">
         <div className="container max-w-4xl">
-          <motion.h2
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.4 }}
-            className="font-display text-2xl md:text-3xl font-semibold text-foreground mb-8"
+            className="flex items-center justify-between mb-8"
           >
-            Key Sections
-          </motion.h2>
+            <h2 className="font-display text-2xl md:text-3xl font-semibold text-foreground">
+              Key Sections
+            </h2>
+            <span className="font-body text-sm text-muted-foreground bg-sage/20 px-3 py-1 rounded-full">
+              {bookSummary.sections.length} sections
+            </span>
+          </motion.div>
           
           <div className="space-y-4">
             {bookSummary.sections.map((section, index) => (
@@ -108,7 +189,7 @@ export default function Summaries() {
                 key={section.id}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.4, delay: 0.1 * index }}
+                transition={{ duration: 0.4, delay: 0.05 * Math.min(index, 10) }}
               >
                 <div
                   className={`
@@ -156,9 +237,7 @@ export default function Summaries() {
                   >
                     <div className="px-5 md:px-6 pb-6 pt-0">
                       <div className="pl-14 border-l-2 border-terracotta/20">
-                        <p className="font-body text-muted-foreground leading-relaxed whitespace-pre-line">
-                          {section.content}
-                        </p>
+                        {renderContent(section.content)}
                       </div>
                     </div>
                   </motion.div>

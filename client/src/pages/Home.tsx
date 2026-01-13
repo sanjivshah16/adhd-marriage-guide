@@ -35,8 +35,8 @@ const features = [
     color: "bg-sand text-charcoal",
   },
   {
-    title: "Research Library",
-    description: "25+ curated academic resources with summaries and links to full texts.",
+    title: "Resources",
+    description: "27 curated academic resources, books, and articles with full summaries and links.",
     icon: FileText,
     href: "/resources",
     color: "bg-sage-light text-sage",

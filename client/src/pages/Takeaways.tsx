@@ -302,18 +302,18 @@ export default function Takeaways() {
                           e.stopPropagation();
                           toggleFavorite(currentTakeaway.id);
                         }}
-                        className="absolute top-4 right-4 p-2 rounded-full bg-cream/90 hover:bg-cream transition-colors"
+                        className="absolute top-4 right-4 p-2 rounded-full bg-[#5E6F5B] hover:bg-[#5E6F5B]/90 transition-colors"
                         aria-label={isFavorite ? "Remove from favorites" : "Add to favorites"}
                       >
                         <Heart 
                           className={`w-5 h-5 transition-colors ${
-                            isFavorite ? "fill-terracotta text-terracotta" : "text-charcoal"
+                            isFavorite ? "fill-[#C07A5A] text-[#C07A5A]" : "text-[#F5F1E8]"
                           }`} 
                         />
                       </button>
                       
                       <div className="absolute bottom-4 left-4 right-4">
-                        <span className="inline-block px-3 py-1 rounded-full bg-cream/90 text-charcoal font-body text-xs font-medium mb-2">
+                        <span className="inline-block px-3 py-1 rounded-full bg-[#5E6F5B] text-[#F5F1E8] font-body text-xs font-medium mb-2">
                           {currentTakeaway.category}
                         </span>
                         <h2 className="font-display text-2xl md:text-3xl font-semibold text-cream">
@@ -429,25 +429,25 @@ export default function Takeaways() {
                             e.stopPropagation();
                             toggleFavorite(takeaway.id);
                           }}
-                          className="absolute top-3 right-3 p-1.5 rounded-full bg-cream/90 hover:bg-cream transition-colors opacity-0 group-hover:opacity-100"
+                          className="absolute top-3 right-3 p-1.5 rounded-full bg-[#5E6F5B] hover:bg-[#5E6F5B]/90 transition-colors opacity-0 group-hover:opacity-100"
                           aria-label={isCardFavorite ? "Remove from favorites" : "Add to favorites"}
                         >
                           <Heart 
                             className={`w-4 h-4 transition-colors ${
-                              isCardFavorite ? "fill-terracotta text-terracotta" : "text-charcoal"
+                              isCardFavorite ? "fill-[#C07A5A] text-[#C07A5A]" : "text-[#F5F1E8]"
                             }`} 
                           />
                         </button>
                         
                         {/* Show heart if favorited */}
                         {isCardFavorite && (
-                          <div className="absolute top-3 right-3 p-1.5 rounded-full bg-cream/90 group-hover:opacity-0 transition-opacity">
-                            <Heart className="w-4 h-4 fill-terracotta text-terracotta" />
+                          <div className="absolute top-3 right-3 p-1.5 rounded-full bg-[#5E6F5B] group-hover:opacity-0 transition-opacity">
+                            <Heart className="w-4 h-4 fill-[#C07A5A] text-[#C07A5A]" />
                           </div>
                         )}
                         
                         <div className="absolute bottom-3 left-3 right-3">
-                          <span className="inline-block px-2 py-0.5 rounded-full bg-cream/90 text-charcoal font-body text-xs font-medium mb-1">
+                          <span className="inline-block px-2 py-0.5 rounded-full bg-[#5E6F5B] text-[#F5F1E8] font-body text-xs font-medium mb-1">
                             {takeaway.category}
                           </span>
                           <h3 className="font-display text-lg font-semibold text-cream line-clamp-2">

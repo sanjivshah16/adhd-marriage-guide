@@ -307,7 +307,7 @@ export default function Takeaways() {
                       >
                         <Heart 
                           className={`w-5 h-5 transition-colors ${
-                            isFavorite ? "fill-[#C07A5A] text-[#C07A5A]" : "text-[#F5F1E8]"
+                            isFavorite ? "fill-[#F5F1E8] text-[#F5F1E8]" : "text-[#F5F1E8]"
                           }`} 
                         />
                       </button>
@@ -434,7 +434,7 @@ export default function Takeaways() {
                         >
                           <Heart 
                             className={`w-4 h-4 transition-colors ${
-                              isCardFavorite ? "fill-[#C07A5A] text-[#C07A5A]" : "text-[#F5F1E8]"
+                              isCardFavorite ? "fill-[#F5F1E8] text-[#F5F1E8]" : "text-[#F5F1E8]"
                             }`} 
                           />
                         </button>
@@ -442,7 +442,7 @@ export default function Takeaways() {
                         {/* Show heart if favorited */}
                         {isCardFavorite && (
                           <div className="absolute top-3 right-3 p-1.5 rounded-full bg-[#5E6F5B] group-hover:opacity-0 transition-opacity">
-                            <Heart className="w-4 h-4 fill-[#C07A5A] text-[#C07A5A]" />
+                            <Heart className="w-4 h-4 fill-[#F5F1E8] text-[#F5F1E8]" />
                           </div>
                         )}
                         

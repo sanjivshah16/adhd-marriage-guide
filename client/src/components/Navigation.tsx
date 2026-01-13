@@ -1,13 +1,15 @@
 import { Link, useLocation } from "wouter";
 import { useState } from "react";
-import { Menu, X, Brain, Heart, BookOpen, FileText, Lightbulb, Wrench } from "lucide-react";
+import { Menu, X, Brain, Heart, BookOpen, FileText, Lightbulb, Wrench, Sun, Moon } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import { useTheme } from "@/contexts/ThemeContext";
 
 /* 
  * Tulum Sanctuary Navigation
  * - Organic, warm aesthetic with botanical accents
  * - Smooth transitions (400-600ms) for meditative feel
  * - Mobile-first with hamburger menu
+ * - Dark mode toggle
  */
 
 const navItems = [
@@ -22,6 +24,7 @@ const navItems = [
 export default function Navigation() {
   const [location] = useLocation();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const { theme, toggleTheme, switchable } = useTheme();
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border">
@@ -69,20 +72,52 @@ export default function Navigation() {
                 </Link>
               );
             })}
+            
+            {/* Dark Mode Toggle - Desktop */}
+            {switchable && toggleTheme && (
+              <button
+                onClick={toggleTheme}
+                className="ml-2 p-2 rounded-full hover:bg-muted transition-colors duration-300"
+                aria-label={theme === "light" ? "Switch to dark mode" : "Switch to light mode"}
+              >
+                {theme === "light" ? (
+                  <Moon className="w-5 h-5 text-muted-foreground hover:text-foreground transition-colors" />
+                ) : (
+                  <Sun className="w-5 h-5 text-muted-foreground hover:text-foreground transition-colors" />
+                )}
+              </button>
+            )}
           </div>
 
-          {/* Mobile Menu Button */}
-          <button
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="lg:hidden p-2 rounded-full hover:bg-muted transition-colors duration-300"
-            aria-label="Toggle menu"
-          >
-            {mobileMenuOpen ? (
-              <X className="w-6 h-6 text-foreground" />
-            ) : (
-              <Menu className="w-6 h-6 text-foreground" />
+          {/* Mobile Menu Button + Theme Toggle */}
+          <div className="flex items-center gap-2 lg:hidden">
+            {/* Dark Mode Toggle - Mobile */}
+            {switchable && toggleTheme && (
+              <button
+                onClick={toggleTheme}
+                className="p-2 rounded-full hover:bg-muted transition-colors duration-300"
+                aria-label={theme === "light" ? "Switch to dark mode" : "Switch to light mode"}
+              >
+                {theme === "light" ? (
+                  <Moon className="w-5 h-5 text-foreground" />
+                ) : (
+                  <Sun className="w-5 h-5 text-foreground" />
+                )}
+              </button>
             )}
-          </button>
+            
+            <button
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              className="p-2 rounded-full hover:bg-muted transition-colors duration-300"
+              aria-label="Toggle menu"
+            >
+              {mobileMenuOpen ? (
+                <X className="w-6 h-6 text-foreground" />
+              ) : (
+                <Menu className="w-6 h-6 text-foreground" />
+              )}
+            </button>
+          </div>
         </div>
       </div>
 

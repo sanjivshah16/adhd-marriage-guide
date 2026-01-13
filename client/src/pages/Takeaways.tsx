@@ -1,10 +1,9 @@
-import { useState, useMemo, useEffect, useCallback } from "react";
-import { motion, AnimatePresence, useMotionValue, useTransform, PanInfo } from "framer-motion";
+import { useState, useMemo, useEffect, useCallback, useRef } from "react";
+import { motion, AnimatePresence, PanInfo } from "framer-motion";
 import { ChevronLeft, ChevronRight, Lightbulb, Filter, Grid, Layers, Heart, Keyboard } from "lucide-react";
 import Navigation from "@/components/Navigation";
 import { Button } from "@/components/ui/button";
 import { keyTakeaways, takeawayCategories } from "@/data";
-import OptimizedImage, { useImagePreloader } from "@/components/OptimizedImage";
 import { useLocalStorage, FavoritesState, initialFavorites } from "@/hooks/useLocalStorage";
 import { toast } from "sonner";
 import {
@@ -18,12 +17,11 @@ import {
 /* 
  * Tulum Sanctuary Key Takeaways Page
  * - 40 visual cards with generated images
- * - Swipe gestures for mobile navigation
+ * - Proper horizontal swipe gestures (card slides off, new card slides in)
  * - Keyboard navigation (arrow keys)
  * - Favorites feature with local storage
  * - Grid and single card view modes
- * - Lazy loading for grid view
- * - Image preloading for smooth card navigation
+ * - Simple eager image loading for reliability
  */
 
 export default function Takeaways() {
@@ -31,14 +29,14 @@ export default function Takeaways() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [viewMode, setViewMode] = useState<"single" | "grid">("single");
   const [showFavoritesOnly, setShowFavoritesOnly] = useState(false);
+  const [direction, setDirection] = useState(0); // -1 for left, 1 for right
+  const [isDragging, setIsDragging] = useState(false);
   
   // Favorites stored in localStorage
   const [favorites, setFavorites] = useLocalStorage<FavoritesState>("adhd-takeaway-favorites", initialFavorites);
 
-  // Swipe handling
-  const x = useMotionValue(0);
-  const rotate = useTransform(x, [-200, 200], [-10, 10]);
-  const opacity = useTransform(x, [-200, -100, 0, 100, 200], [0.5, 1, 1, 1, 0.5]);
+  // Track loaded images
+  const [loadedImages, setLoadedImages] = useState<Set<string>>(new Set());
 
   const filteredTakeaways = useMemo(() => {
     let filtered = keyTakeaways;
@@ -56,23 +54,53 @@ export default function Takeaways() {
 
   const currentTakeaway = filteredTakeaways[currentIndex] || filteredTakeaways[0];
 
-  // Get all image URLs for preloading
-  const imageUrls = useMemo(() => 
-    filteredTakeaways.map(t => t.image), 
-    [filteredTakeaways]
-  );
-
-  // Preload adjacent images for smooth navigation
-  useImagePreloader(imageUrls, currentIndex, 2);
+  // Preload adjacent images
+  useEffect(() => {
+    if (!currentTakeaway) return;
+    
+    const imagesToPreload: string[] = [];
+    
+    // Current image
+    imagesToPreload.push(currentTakeaway.image);
+    
+    // Next 3 images
+    for (let i = 1; i <= 3; i++) {
+      const nextIndex = currentIndex + i;
+      if (nextIndex < filteredTakeaways.length) {
+        imagesToPreload.push(filteredTakeaways[nextIndex].image);
+      }
+    }
+    
+    // Previous 2 images
+    for (let i = 1; i <= 2; i++) {
+      const prevIndex = currentIndex - i;
+      if (prevIndex >= 0) {
+        imagesToPreload.push(filteredTakeaways[prevIndex].image);
+      }
+    }
+    
+    // Preload images
+    imagesToPreload.forEach(src => {
+      if (!loadedImages.has(src)) {
+        const img = new Image();
+        img.onload = () => {
+          setLoadedImages(prev => new Set([...Array.from(prev), src]));
+        };
+        img.src = src;
+      }
+    });
+  }, [currentIndex, filteredTakeaways, currentTakeaway, loadedImages]);
 
   const handleNext = useCallback(() => {
     if (currentIndex < filteredTakeaways.length - 1) {
+      setDirection(1);
       setCurrentIndex(prev => prev + 1);
     }
   }, [currentIndex, filteredTakeaways.length]);
 
   const handlePrevious = useCallback(() => {
     if (currentIndex > 0) {
+      setDirection(-1);
       setCurrentIndex(prev => prev - 1);
     }
   }, [currentIndex]);
@@ -80,6 +108,7 @@ export default function Takeaways() {
   const handleCategoryChange = (value: string) => {
     setSelectedCategory(value);
     setCurrentIndex(0);
+    setDirection(0);
   };
 
   // Toggle favorite
@@ -126,16 +155,26 @@ export default function Takeaways() {
     return () => window.removeEventListener("keydown", handleKeyDown);
   }, [viewMode, handleNext, handlePrevious, currentTakeaway, toggleFavorite]);
 
-  // Swipe gesture handling
+  // Swipe gesture handling - proper horizontal swipe
   const handleDragEnd = (_: MouseEvent | TouchEvent | PointerEvent, info: PanInfo) => {
-    const threshold = 100;
-    const velocity = info.velocity.x;
+    setIsDragging(false);
+    const threshold = 50;
+    const velocity = Math.abs(info.velocity.x);
     const offset = info.offset.x;
 
-    if (offset < -threshold || velocity < -500) {
-      handleNext();
-    } else if (offset > threshold || velocity > 500) {
-      handlePrevious();
+    // Swipe left = next card
+    if (offset < -threshold || (velocity > 300 && info.velocity.x < 0)) {
+      if (currentIndex < filteredTakeaways.length - 1) {
+        setDirection(1);
+        setCurrentIndex(prev => prev + 1);
+      }
+    }
+    // Swipe right = previous card
+    else if (offset > threshold || (velocity > 300 && info.velocity.x > 0)) {
+      if (currentIndex > 0) {
+        setDirection(-1);
+        setCurrentIndex(prev => prev - 1);
+      }
     }
   };
 
@@ -145,6 +184,25 @@ export default function Takeaways() {
       setCurrentIndex(Math.max(0, filteredTakeaways.length - 1));
     }
   }, [filteredTakeaways.length, currentIndex]);
+
+  // Animation variants for horizontal swipe
+  const slideVariants = {
+    enter: (direction: number) => ({
+      x: direction > 0 ? 400 : -400,
+      opacity: 0,
+      scale: 0.95,
+    }),
+    center: {
+      x: 0,
+      opacity: 1,
+      scale: 1,
+    },
+    exit: (direction: number) => ({
+      x: direction > 0 ? -400 : 400,
+      opacity: 0,
+      scale: 0.95,
+    }),
+  };
 
   return (
     <div className="min-h-screen bg-background">
@@ -262,7 +320,7 @@ export default function Takeaways() {
             </motion.div>
           )}
 
-          {/* Single Card View with Swipe */}
+          {/* Single Card View with Proper Horizontal Swipe */}
           {viewMode === "single" && filteredTakeaways.length > 0 && (
             <>
               <div className="flex items-center justify-center mb-4">
@@ -271,71 +329,84 @@ export default function Takeaways() {
                 </span>
               </div>
 
-              <AnimatePresence mode="wait">
-                <motion.div
-                  key={currentTakeaway.id}
-                  initial={{ opacity: 0, scale: 0.95 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  exit={{ opacity: 0, scale: 0.95 }}
-                  transition={{ duration: 0.4, ease: [0.4, 0, 0.2, 1] }}
-                  className="max-w-2xl mx-auto touch-pan-y"
-                  style={{ x, rotate, opacity }}
-                  drag="x"
-                  dragConstraints={{ left: 0, right: 0 }}
-                  dragElastic={0.7}
-                  onDragEnd={handleDragEnd}
-                >
-                  <div className="bg-card rounded-3xl border border-border shadow-xl overflow-hidden">
-                    {/* Image with skeleton and preloading */}
-                    <div className="relative">
-                      <OptimizedImage
-                        src={currentTakeaway.image}
-                        alt={currentTakeaway.title}
-                        aspectRatio="aspect-[4/3]"
-                        priority={true}
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-charcoal/60 via-transparent to-transparent pointer-events-none" />
-                      
-                      {/* Favorite button */}
-                      <button
-                        onClick={(e) => {
-                          e.stopPropagation();
-                          toggleFavorite(currentTakeaway.id);
-                        }}
-                        className="absolute top-4 right-4 p-2 rounded-full bg-[#5E6F5B] hover:bg-[#5E6F5B]/90 transition-colors"
-                        aria-label={isFavorite ? "Remove from favorites" : "Add to favorites"}
-                      >
-                        <Heart 
-                          className={`w-5 h-5 transition-colors ${
-                            isFavorite ? "fill-[#F5F1E8] text-[#F5F1E8]" : "text-[#F5F1E8]"
-                          }`} 
+              {/* Card container with overflow hidden for swipe effect */}
+              <div className="relative overflow-hidden max-w-2xl mx-auto">
+                <AnimatePresence initial={false} custom={direction} mode="popLayout">
+                  <motion.div
+                    key={currentTakeaway.id}
+                    custom={direction}
+                    variants={slideVariants}
+                    initial="enter"
+                    animate="center"
+                    exit="exit"
+                    transition={{
+                      x: { type: "spring", stiffness: 300, damping: 30 },
+                      opacity: { duration: 0.2 },
+                      scale: { duration: 0.2 },
+                    }}
+                    drag="x"
+                    dragConstraints={{ left: 0, right: 0 }}
+                    dragElastic={0.2}
+                    onDragStart={() => setIsDragging(true)}
+                    onDragEnd={handleDragEnd}
+                    className="touch-pan-y cursor-grab active:cursor-grabbing"
+                    style={{ touchAction: "pan-y" }}
+                  >
+                    <div className="bg-card rounded-3xl border border-border shadow-xl overflow-hidden">
+                      {/* Image - simple img tag for reliability */}
+                      <div className="relative aspect-[4/3] bg-sand/30">
+                        <img
+                          src={currentTakeaway.image}
+                          alt={currentTakeaway.title}
+                          className="absolute inset-0 w-full h-full object-cover"
+                          loading="eager"
+                          decoding="async"
                         />
-                      </button>
+                        <div className="absolute inset-0 bg-gradient-to-t from-charcoal/60 via-transparent to-transparent pointer-events-none" />
+                        
+                        {/* Favorite button */}
+                        <button
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            if (!isDragging) {
+                              toggleFavorite(currentTakeaway.id);
+                            }
+                          }}
+                          className="absolute top-4 right-4 p-2 rounded-full bg-[#5E6F5B] hover:bg-[#5E6F5B]/90 transition-colors"
+                          aria-label={isFavorite ? "Remove from favorites" : "Add to favorites"}
+                        >
+                          <Heart 
+                            className={`w-5 h-5 transition-colors ${
+                              isFavorite ? "fill-[#F5F1E8] text-[#F5F1E8]" : "text-[#F5F1E8]"
+                            }`} 
+                          />
+                        </button>
+                        
+                        <div className="absolute bottom-4 left-4 right-4">
+                          <span className="inline-block px-3 py-1 rounded-full bg-[#5E6F5B] text-[#F5F1E8] font-body text-xs font-medium mb-2">
+                            {currentTakeaway.category}
+                          </span>
+                          <h2 className="font-display text-2xl md:text-3xl font-semibold text-cream">
+                            {currentTakeaway.title}
+                          </h2>
+                        </div>
+                      </div>
                       
-                      <div className="absolute bottom-4 left-4 right-4">
-                        <span className="inline-block px-3 py-1 rounded-full bg-[#5E6F5B] text-[#F5F1E8] font-body text-xs font-medium mb-2">
-                          {currentTakeaway.category}
-                        </span>
-                        <h2 className="font-display text-2xl md:text-3xl font-semibold text-cream">
-                          {currentTakeaway.title}
-                        </h2>
+                      {/* Content */}
+                      <div className="p-6 md:p-8">
+                        <p className="font-body text-lg text-foreground leading-relaxed">
+                          {currentTakeaway.content}
+                        </p>
                       </div>
                     </div>
-                    
-                    {/* Content */}
-                    <div className="p-6 md:p-8">
-                      <p className="font-body text-lg text-foreground leading-relaxed">
-                        {currentTakeaway.content}
-                      </p>
-                    </div>
-                  </div>
-                  
-                  {/* Swipe hint for mobile */}
-                  <p className="text-center text-sm text-muted-foreground mt-4 md:hidden">
-                    Swipe left or right to navigate
-                  </p>
-                </motion.div>
-              </AnimatePresence>
+                  </motion.div>
+                </AnimatePresence>
+              </div>
+              
+              {/* Swipe hint for mobile */}
+              <p className="text-center text-sm text-muted-foreground mt-4 md:hidden">
+                Swipe left or right to navigate
+              </p>
 
               {/* Navigation */}
               <motion.div
@@ -371,7 +442,10 @@ export default function Takeaways() {
                 {filteredTakeaways.map((_, index) => (
                   <button
                     key={index}
-                    onClick={() => setCurrentIndex(index)}
+                    onClick={() => {
+                      setDirection(index > currentIndex ? 1 : -1);
+                      setCurrentIndex(index);
+                    }}
                     className={`
                       w-2 h-2 rounded-full transition-all duration-300
                       ${index === currentIndex 
@@ -386,7 +460,7 @@ export default function Takeaways() {
             </>
           )}
 
-          {/* Grid View with Lazy Loading */}
+          {/* Grid View - Simple image loading */}
           {viewMode === "grid" && filteredTakeaways.length > 0 && (
             <motion.div
               initial={{ opacity: 0 }}
@@ -407,19 +481,20 @@ export default function Takeaways() {
                   >
                     <div 
                       onClick={() => {
+                        setDirection(0);
                         setCurrentIndex(index);
                         setViewMode("single");
                       }}
                       className="bg-card rounded-2xl border border-border shadow-md overflow-hidden transition-all duration-500 hover:shadow-xl hover:-translate-y-1 hover:border-sage/30"
                     >
-                      {/* Image with lazy loading and skeleton */}
-                      <div className="relative">
-                        <OptimizedImage
+                      {/* Image - simple img tag with lazy loading for grid */}
+                      <div className="relative aspect-[4/3] bg-sand/30 overflow-hidden">
+                        <img
                           src={takeaway.image}
                           alt={takeaway.title}
-                          aspectRatio="aspect-[4/3]"
-                          className="transition-transform duration-500 group-hover:scale-105"
-                          priority={index < 6}
+                          className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                          loading={index < 6 ? "eager" : "lazy"}
+                          decoding="async"
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-charcoal/60 via-transparent to-transparent pointer-events-none" />
                         

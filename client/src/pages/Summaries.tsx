@@ -207,7 +207,7 @@ export default function Summaries() {
               >
                 <div className="rounded-2xl overflow-hidden shadow-lg mb-6">
                   <img 
-                    src="/images/hero-resources.png" 
+                    src="/images/hero-resources.webp" 
                     alt="ADHD Marriage Resources"
                     className="w-full h-auto"
                   />

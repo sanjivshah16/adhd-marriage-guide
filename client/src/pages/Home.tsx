@@ -124,7 +124,7 @@ export default function Home() {
             >
               <div className="relative rounded-3xl overflow-hidden shadow-2xl shadow-charcoal/10">
                 <img 
-                  src="/images/hero-main.png" 
+                  src="/images/hero-main.webp" 
                   alt="Couple in peaceful Japandi setting"
                   className="w-full h-auto object-cover"
                 />

@@ -254,7 +254,7 @@ export default function Takeaways() {
                   <SelectValue placeholder="Select category" />
                 </SelectTrigger>
                 <SelectContent>
-                  {takeawayCategories.map(category => (
+                  {takeawayCategories.map((category: string) => (
                     <SelectItem key={category} value={category}>
                       {category}
                     </SelectItem>

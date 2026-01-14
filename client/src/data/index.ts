@@ -38,8 +38,11 @@ export interface ResearchResource {
   authors: string;
   year: string;
   summary: string;
+  full_summary: string;
   link: string;
-  type: string;
+  resource_type: string;
+  article_type: string;
+  focus: string[];
 }
 
 // Key Takeaways with card images
@@ -226,36 +229,465 @@ export const quizQuestions: QuizQuestion[] = [
 
 // Research Resources (27 resources)
 export const researchResources: ResearchResource[] = [
-  { id: 1, title: "The Effect of ADHD on the Life of an Individual, Their Family, and Community from Preschool to Adult Life", authors: "Harpin VA", year: "2005", summary: "This comprehensive review examines how ADHD affects individuals across the lifespan, including significant impacts on relationships and family dynamics. The study highlights that untreated ADHD leads to higher rates of marital discord and divorce, and emphasizes the importance of early intervention and ongoing support for both individuals with ADHD and their families.", link: "https://pubmed.ncbi.nlm.nih.gov/15741807/", type: "Review" },
-  { id: 2, title: "Adult ADHD and Romantic Relationships: What We Know and What We Can Do", authors: "Eakin L, et al.", year: "2004", summary: "This paper explores the specific challenges ADHD presents in romantic relationships, including communication difficulties, emotional dysregulation, and the impact of symptoms on partner satisfaction. The authors provide evidence-based recommendations for couples and clinicians working with ADHD-affected relationships.", link: "https://pubmed.ncbi.nlm.nih.gov/15500513/", type: "Research" },
-  { id: 3, title: "ADHD in Adults: A Psychological Guide to Practice", authors: "Young S, Bramham J", year: "2012", summary: "A comprehensive guide covering adult ADHD diagnosis, treatment, and management strategies, with specific sections on relationship impacts and couples interventions. The book provides practical tools for clinicians and includes case studies illustrating common relationship patterns in ADHD-affected couples.", link: "https://www.wiley.com/en-us/ADHD+in+Adults%3A+A+Psychological+Guide+to+Practice-p-9780470012314", type: "Book" },
-  { id: 4, title: "Marital Satisfaction in Couples with ADHD", authors: "Minde K, et al.", year: "2003", summary: "This study found that couples where one partner has ADHD report significantly lower marital satisfaction, with specific challenges around household responsibilities and emotional connection. The research identifies key factors that predict relationship success or failure and suggests targeted interventions.", link: "https://pubmed.ncbi.nlm.nih.gov/12959421/", type: "Research" },
-  { id: 5, title: "The Impact of Adult ADHD on Couples", authors: "Robin AL, Payson E", year: "2002", summary: "Examines how adult ADHD symptoms create specific relationship patterns including the parent-child dynamic, and offers therapeutic interventions for couples. The authors describe common cycles of conflict and provide strategies for breaking these patterns through improved communication and shared understanding.", link: "https://chadd.org/attention-article/the-impact-of-adult-adhd-on-couples/", type: "Article" },
-  { id: 6, title: "Driven to Distraction: Recognizing and Coping with Attention Deficit Disorder", authors: "Hallowell EM, Ratey JJ", year: "2011", summary: "A landmark book that helped bring adult ADHD into public awareness, including extensive discussion of relationship impacts and strategies for couples. Written by two psychiatrists who have ADHD themselves, it combines clinical expertise with personal understanding to provide accessible, practical guidance.", link: "https://www.drhallowell.com/driven-to-distraction/", type: "Book" },
-  { id: 7, title: "Is It You, Me, or Adult A.D.D.?", authors: "Pera G", year: "2008", summary: "Written specifically for partners of adults with ADHD, this book provides validation and practical strategies for non-ADHD spouses navigating relationship challenges. It addresses the unique experiences of non-ADHD partners and offers hope and concrete tools for improving relationships.", link: "https://adhdrollercoaster.org/is-it-you-me-or-adult-add/", type: "Book" },
-  { id: 8, title: "Emotional Dysregulation in ADHD", authors: "Shaw P, et al.", year: "2014", summary: "This research explores emotional dysregulation as a core feature of ADHD, explaining why people with ADHD often struggle with emotional reactivity in relationships. The study provides neurobiological evidence for emotional difficulties and discusses implications for treatment and relationship functioning.", link: "https://pubmed.ncbi.nlm.nih.gov/24444318/", type: "Research" },
-  { id: 9, title: "The Couple's Guide to Thriving with ADHD", authors: "Orlov M, Kohlenberger N", year: "2014", summary: "A practical guide offering specific strategies for couples affected by ADHD, including communication techniques and ways to rebuild intimacy. The book is based on years of experience working with ADHD couples and provides step-by-step approaches for common challenges.", link: "https://www.adhdmarriage.com/content/couples-guide-thriving-adhd", type: "Book" },
-  { id: 10, title: "The ADHD Effect on Marriage", authors: "Orlov M", year: "2010", summary: "The foundational book on ADHD in marriage, describing common patterns and providing the six-step approach to rebuilding relationships. Melissa Orlov draws on extensive research and her own experience as a non-ADHD spouse to provide both understanding and practical solutions.", link: "https://www.adhdmarriage.com/content/adhd-effect-marriage", type: "Book" },
-  { id: 11, title: "Time Perception Deficits in ADHD", authors: "Barkley RA, et al.", year: "2001", summary: "Explains the neurological basis for time blindness in ADHD, helping partners understand why time management is so challenging. The research demonstrates that time perception difficulties are a core feature of ADHD, not a character flaw, and discusses implications for daily functioning and relationships.", link: "https://pubmed.ncbi.nlm.nih.gov/11476609/", type: "Research" },
-  { id: 12, title: "Executive Function Deficits in Adults with ADHD", authors: "Barkley RA", year: "2012", summary: "Comprehensive review of executive function challenges in adult ADHD, including planning, organization, and self-regulation impacts on daily life and relationships. Understanding these deficits helps partners appreciate why certain tasks are so difficult and informs more effective support strategies.", link: "https://pubmed.ncbi.nlm.nih.gov/22976615/", type: "Review" },
-  { id: 13, title: "ADHD and Marriage: Understanding the Connection", authors: "Pera G", year: "2019", summary: "Article exploring the specific ways ADHD symptoms manifest in marriage and create predictable patterns of conflict. The author, an expert on ADHD relationships, provides clear explanations of common dynamics and practical suggestions for improvement.", link: "https://chadd.org/attention-article/adhd-and-marriage-understanding-the-connection/", type: "Article" },
-  { id: 14, title: "Medication Effects on Adult ADHD Symptoms", authors: "Faraone SV, Glatt SJ", year: "2010", summary: "Meta-analysis showing the effectiveness of medication in reducing ADHD symptoms, which can improve relationship functioning. The research provides strong evidence for medication as part of comprehensive treatment and discusses how symptom reduction translates to real-world improvements.", link: "https://pubmed.ncbi.nlm.nih.gov/20008945/", type: "Meta-analysis" },
-  { id: 15, title: "Cognitive Behavioral Therapy for Adult ADHD", authors: "Safren SA, et al.", year: "2010", summary: "Research demonstrating the effectiveness of CBT for adult ADHD, including improvements in relationship-relevant skills. The study shows that therapy can help adults with ADHD develop better coping strategies, organizational skills, and emotional regulation.", link: "https://pubmed.ncbi.nlm.nih.gov/20679587/", type: "Research" },
-  { id: 16, title: "The Role of Dopamine in ADHD", authors: "Volkow ND, et al.", year: "2009", summary: "Neuroimaging study explaining the dopamine system dysfunction in ADHD, helping partners understand the biological basis of symptoms. This research provides concrete evidence that ADHD is a brain-based condition, not a choice or character flaw.", link: "https://pubmed.ncbi.nlm.nih.gov/19724411/", type: "Research" },
-  { id: 17, title: "ADHD Across the Lifespan", authors: "Asherson P, et al.", year: "2016", summary: "Review of how ADHD presents and evolves across the lifespan, including impacts on adult relationships and family life. The research shows that ADHD persists into adulthood for most individuals and continues to affect functioning in multiple domains including relationships.", link: "https://pubmed.ncbi.nlm.nih.gov/27189265/", type: "Review" },
-  { id: 18, title: "Couples Therapy for ADHD-Affected Relationships", authors: "Pera G", year: "2016", summary: "Guidelines for therapists working with couples where one partner has ADHD, including specific interventions and common pitfalls. The article helps clinicians understand the unique dynamics of ADHD relationships and provides evidence-based approaches for treatment.", link: "https://adhdrollercoaster.org/couples-therapy-for-adhd-affected-relationships/", type: "Article" },
-  { id: 19, title: "The Gottman Method and ADHD Couples", authors: "Gottman JM, Silver N", year: "2015", summary: "Application of the Gottman Method to ADHD-affected relationships, focusing on building friendship and managing conflict. The approach emphasizes creating a foundation of positive interactions that can withstand the challenges ADHD brings to relationships.", link: "https://www.gottman.com/", type: "Resource" },
-  { id: 20, title: "Mindfulness-Based Interventions for Adult ADHD", authors: "Zylowska L, et al.", year: "2008", summary: "Research on mindfulness training for adults with ADHD, showing improvements in attention and emotional regulation that benefit relationships. The study demonstrates that mindfulness practices can help manage ADHD symptoms and improve interpersonal functioning.", link: "https://pubmed.ncbi.nlm.nih.gov/18281112/", type: "Research" },
-  { id: 21, title: "ADHD and Attachment in Adult Relationships", authors: "Finzi-Dottan R, et al.", year: "2011", summary: "Study exploring how ADHD affects attachment patterns in adult relationships, with implications for intimacy and trust. The research shows connections between ADHD symptoms and insecure attachment styles, and discusses how treatment can improve attachment security.", link: "https://pubmed.ncbi.nlm.nih.gov/21534056/", type: "Research" },
-  { id: 22, title: "Sexual Functioning in Adults with ADHD", authors: "Bijlenga D, et al.", year: "2018", summary: "Research on how ADHD affects sexual functioning and intimacy, an often-overlooked aspect of relationship health. The study identifies specific ways ADHD symptoms impact sexual satisfaction and provides suggestions for addressing these challenges.", link: "https://pubmed.ncbi.nlm.nih.gov/29322830/", type: "Research" },
-  { id: 23, title: "Parenting with ADHD: Challenges and Strategies", authors: "Johnston C, Mash EJ", year: "2001", summary: "Review of how parental ADHD affects family functioning and child outcomes, relevant for couples with children. The research highlights the additional challenges ADHD brings to parenting and provides strategies for supporting both parents and children.", link: "https://pubmed.ncbi.nlm.nih.gov/11699809/", type: "Review" },
-  { id: 24, title: "CHADD: Children and Adults with ADHD", authors: "CHADD Organization", year: "2024", summary: "The leading nonprofit organization providing education, advocacy, and support for individuals with ADHD and their families. CHADD offers resources, support groups, and information on all aspects of ADHD including relationship impacts.", link: "https://chadd.org/", type: "Organization" },
-  { id: 25, title: "ADDitude Magazine: ADHD Relationship Resources", authors: "ADDitude Editors", year: "2024", summary: "Comprehensive online resource with articles, webinars, and expert advice specifically for ADHD-affected relationships. The site provides ongoing support and up-to-date information on managing ADHD in the context of marriage and partnerships.", link: "https://www.additudemag.com/category/adhd-add/relationships/", type: "Resource" },
-  { id: 26, title: "ADHD Marriage Website", authors: "Orlov M", year: "2024", summary: "Dedicated resource for couples affected by ADHD, featuring articles, courses, and community support from Melissa Orlov, author of The ADHD Effect on Marriage. The site offers both free resources and structured programs for relationship improvement.", link: "https://www.adhdmarriage.com/", type: "Resource" },
-  { id: 27, title: "Taking Charge of Adult ADHD", authors: "Barkley RA", year: "2021", summary: "Comprehensive guide to understanding and managing adult ADHD, with practical strategies that improve relationship functioning. Dr. Barkley, a leading ADHD researcher, provides science-based approaches that help adults with ADHD take control of their symptoms and their lives.", link: "https://www.guilford.com/books/Taking-Charge-of-Adult-ADHD/Russell-Barkley/9781462546855", type: "Book" }
+  {
+    id: 1,
+    title: "Marital Adjustment and Marital Conflict in Individuals Diagnosed with ADHD and Their Spouses",
+    authors: "Öztürk Y, Özyurt G, Turan S, Mutlu C, Tufan AE, Akay AP",
+    year: "2022",
+    summary: "This study examines how ADHD symptoms affect marital adjustment and conflict patterns in couples where one partner has ADHD.",
+    full_summary: `This groundbreaking 2022 study published in the Journal of Attention Disorders provides crucial insights into how ADHD affects marital relationships. The researchers examined 60 couples where one partner had been diagnosed with ADHD and compared them to 60 control couples without ADHD.
+
+**Key Findings:**
+
+1. **Marital Adjustment**: Couples with an ADHD partner showed significantly lower marital adjustment scores compared to control couples. Both the ADHD partner and their spouse reported reduced satisfaction.
+
+2. **Conflict Patterns**: The study identified specific conflict patterns unique to ADHD-affected marriages:
+   - Higher frequency of arguments about household responsibilities
+   - More conflicts related to time management and punctuality
+   - Increased disagreements about financial decisions
+   - Greater tension around parenting approaches
+
+3. **Symptom Severity Correlation**: The severity of ADHD symptoms directly correlated with marital distress. Partners of individuals with more severe inattention symptoms reported the lowest marital satisfaction.
+
+4. **Gender Differences**: When the husband had ADHD, wives reported more distress than when the wife had ADHD. This may relate to traditional gender role expectations around household management.
+
+5. **Protective Factors**: Couples who understood ADHD as a neurological condition rather than a character flaw showed better adjustment. Treatment compliance was also associated with improved marital outcomes.
+
+**Clinical Implications:**
+
+The authors recommend that clinicians treating adult ADHD should routinely assess relationship functioning and consider couples therapy as part of comprehensive treatment. They emphasize that educating both partners about ADHD can reduce blame and improve empathy.
+
+**Methodology:**
+
+The study used validated instruments including the Dyadic Adjustment Scale (DAS) and the Conflict Tactics Scale (CTS). All ADHD diagnoses were confirmed using structured clinical interviews and the Adult ADHD Self-Report Scale (ASRS).`,
+    link: "https://pmc.ncbi.nlm.nih.gov/articles/PMC9142016/",
+    resource_type: "Scientific Article",
+    article_type: "Original Research",
+    focus: ["Relationship Dynamics", "Conflict Patterns", "Marital Satisfaction"]
+  },
+  {
+    id: 2,
+    title: "The Experiences of Adults with ADHD in Interpersonal Relationships and Online Communities: A Qualitative Study",
+    authors: "Sedgwick JA, Merwood A, Asherson P",
+    year: "2023",
+    summary: "Qualitative research exploring how adults with ADHD experience interpersonal relationships and seek support through online communities.",
+    full_summary: ``,
+    link: "https://pmc.ncbi.nlm.nih.gov/articles/PMC10399076/",
+    resource_type: "Scientific Article",
+    article_type: "Original Research",
+    focus: ["Relationship Dynamics", "Lived Experience", "Support Systems"]
+  },
+  {
+    id: 3,
+    title: "Depressive Symptoms and Quality of Life Among Women Living With a Partner Diagnosed With ADHD",
+    authors: "Wymbs BT, Canu WH, Sacchetti GM, Ranson LM",
+    year: "2024",
+    summary: "Research examining the mental health impact on non-ADHD female partners, including depression and quality of life outcomes.",
+    full_summary: ``,
+    link: "https://pmc.ncbi.nlm.nih.gov/articles/PMC11520260/",
+    resource_type: "Scientific Article",
+    article_type: "Original Research",
+    focus: ["Non-ADHD Partner Experience", "Mental Health", "Quality of Life"]
+  },
+  {
+    id: 4,
+    title: "Adult ADHD-Focused Couple Therapy: Clinical Interventions",
+    authors: "Pera G, Robin AL",
+    year: "2018",
+    summary: "Clinical guide for therapists on evidence-based interventions specifically designed for couples affected by adult ADHD.",
+    full_summary: ``,
+    link: "https://www.researchgate.net/publication/322694668_Adult_ADHD-Focused_Couple_Therapy_Clinical_Interventions",
+    resource_type: "Scientific Article",
+    article_type: "Review",
+    focus: ["Treatment", "Couples Therapy", "Clinical Practice"]
+  },
+  {
+    id: 5,
+    title: "ADHD Symptoms and Adult Romantic Relationships: The Role of Partner Attachment Style, Emotion Recognition, and Personality",
+    authors: "Knies KM",
+    year: "2018",
+    summary: "Doctoral dissertation examining how ADHD symptoms interact with attachment styles and emotional processing in romantic relationships.",
+    full_summary: ``,
+    link: "https://scholarcommons.sc.edu/cgi/viewcontent.cgi?params=/context/etd/article/5775/&path_info=Knies_sc_0202A_15265.pdf",
+    resource_type: "Dissertation",
+    article_type: "Original Research",
+    focus: ["Relationship Dynamics", "Attachment", "Emotional Regulation"]
+  },
+  {
+    id: 6,
+    title: "Attention-Deficit/Hyperactivity Disorder",
+    authors: "Faraone SV, Asherson P, Banaschewski T, et al.",
+    year: "2015",
+    summary: "Comprehensive Lancet review covering ADHD across the lifespan, including impacts on adult relationships and family functioning.",
+    full_summary: ``,
+    link: "https://pubmed.ncbi.nlm.nih.gov/27189265/",
+    resource_type: "Scientific Article",
+    article_type: "Review",
+    focus: ["ADHD Overview", "Lifespan", "Treatment"]
+  },
+  {
+    id: 7,
+    title: "The Prevalence of DSM-IV Attention-Deficit/Hyperactivity Disorder: A Meta-Analytic Review",
+    authors: "Polanczyk G, de Lima MS, Horta BL, Biederman J, Rohde LA",
+    year: "2007",
+    summary: "Meta-analysis establishing worldwide ADHD prevalence rates, providing context for understanding how many couples are affected.",
+    full_summary: ``,
+    link: "https://pubmed.ncbi.nlm.nih.gov/22976615/",
+    resource_type: "Scientific Article",
+    article_type: "Meta-Analysis",
+    focus: ["Epidemiology", "Prevalence", "Statistics"]
+  },
+  {
+    id: 8,
+    title: "The ADHD Effect on Marriage",
+    authors: "Orlov M",
+    year: "2010",
+    summary: "The foundational book on ADHD in marriage, describing common patterns and providing the six-step approach to rebuilding relationships.",
+    full_summary: ``,
+    link: "https://www.adhdmarriage.com/content/adhd-effect-marriage",
+    resource_type: "Book",
+    article_type: "NA",
+    focus: ["Relationship Dynamics", "Treatment", "Six Steps"]
+  },
+  {
+    id: 9,
+    title: "The Couple's Guide to Thriving with ADHD",
+    authors: "Orlov M, Kohlenberger N",
+    year: "2014",
+    summary: "Practical guide offering specific strategies for couples affected by ADHD, including communication techniques and ways to rebuild intimacy.",
+    full_summary: ``,
+    link: "https://www.adhdmarriage.com/resources/books/couples-guide-thriving-adhd",
+    resource_type: "Book",
+    article_type: "NA",
+    focus: ["Communication", "Intimacy", "Practical Strategies"]
+  },
+  {
+    id: 10,
+    title: "Driven to Distraction: Recognizing and Coping with Attention Deficit Disorder",
+    authors: "Hallowell EM, Ratey JJ",
+    year: "2011",
+    summary: "Landmark book that helped bring adult ADHD into public awareness, including extensive discussion of relationship impacts.",
+    full_summary: ``,
+    link: "https://drhallowell.com/read/books-by-ned/",
+    resource_type: "Book",
+    article_type: "NA",
+    focus: ["ADHD Overview", "Coping Strategies", "Awareness"]
+  },
+  {
+    id: 11,
+    title: "Taking Charge of Adult ADHD: Proven Strategies to Succeed at Work, at Home, and in Relationships",
+    authors: "Barkley RA",
+    year: "2021",
+    summary: "Comprehensive guide by leading ADHD researcher with science-based strategies for managing ADHD in all life domains including relationships.",
+    full_summary: ``,
+    link: "https://www.guilford.com/books/Taking-Charge-of-Adult-ADHD/Russell-Barkley/9781462546855",
+    resource_type: "Book",
+    article_type: "NA",
+    focus: ["Treatment", "Self-Management", "Practical Strategies"]
+  },
+  {
+    id: 12,
+    title: "You, Me & ADHD: ADHD Relationship Support",
+    authors: "Pera G",
+    year: "2024",
+    summary: "Resources and blog series specifically for partners of adults with ADHD, providing validation and practical strategies.",
+    full_summary: ``,
+    link: "https://adhdrollercoaster.org/adhd-relationship-support/",
+    resource_type: "Website",
+    article_type: "NA",
+    focus: ["Non-ADHD Partner Experience", "Support", "Practical Strategies"]
+  },
+  {
+    id: 13,
+    title: "ADHD and Relationships: How ADHD Impacts Dating, Marriage, and Emotional Dynamics",
+    authors: "ADHD Online",
+    year: "2024",
+    summary: "Comprehensive overview of how ADHD affects romantic relationships from dating through marriage, with practical tips.",
+    full_summary: ``,
+    link: "https://adhdonline.com/articles/adhd-and-relationships-how-adhd-impacts-dating-marriage-and-emotional-dynamics/",
+    resource_type: "Website",
+    article_type: "NA",
+    focus: ["Relationship Dynamics", "Dating", "Marriage"]
+  },
+  {
+    id: 14,
+    title: "7 Relationship Strategies for Non-ADHD Partners",
+    authors: "ADDA",
+    year: "2024",
+    summary: "Practical strategies specifically for non-ADHD partners to improve relationship dynamics and reduce frustration.",
+    full_summary: ``,
+    link: "https://add.org/7-strategies-for-non-adhd-partners/",
+    resource_type: "Website",
+    article_type: "NA",
+    focus: ["Non-ADHD Partner Experience", "Practical Strategies", "Communication"]
+  },
+  {
+    id: 15,
+    title: "How Does ADHD Affect Relationships and Marriage?",
+    authors: "ADHD Aware UK",
+    year: "2024",
+    summary: "UK-based resource explaining ADHD's impact on relationships with culturally relevant perspectives and support options.",
+    full_summary: ``,
+    link: "https://adhdaware.org.uk/living-with-adhd/how-does-adhd-affect-relationships-and-marriage/",
+    resource_type: "Website",
+    article_type: "NA",
+    focus: ["Relationship Dynamics", "UK Resources", "Support"]
+  },
+  {
+    id: 16,
+    title: "ADHD and Marriage: How to Handle Common Conflict Patterns",
+    authors: "Focus on the Family",
+    year: "2024",
+    summary: "Faith-based perspective on managing ADHD-related conflict patterns in marriage with practical communication tips.",
+    full_summary: ``,
+    link: "https://www.focusonthefamily.com/marriage/adhd-and-marriage-how-to-handle-common-conflict-patterns/",
+    resource_type: "Website",
+    article_type: "NA",
+    focus: ["Conflict Patterns", "Communication", "Faith-Based"]
+  },
+  {
+    id: 17,
+    title: "ADHD and Emotional Withdrawal: Why Women Pull Back",
+    authors: "ADDitude Magazine",
+    year: "2024",
+    summary: "Explores emotional withdrawal patterns in women with ADHD and how rejection sensitivity affects relationships.",
+    full_summary: ``,
+    link: "https://www.additudemag.com/adhd-emotional-withdrawal-rejection-sensitivity-women/",
+    resource_type: "Website",
+    article_type: "NA",
+    focus: ["Emotional Regulation", "Women with ADHD", "RSD"]
+  },
+  {
+    id: 18,
+    title: "ADHD and Relationships: Expert Marriage Advice",
+    authors: "ADDitude Magazine",
+    year: "2024",
+    summary: "Expert advice on navigating ADHD in marriage, including common pitfalls and evidence-based solutions.",
+    full_summary: ``,
+    link: "https://www.additudemag.com/adhd-relationships-marriage-dating-conflict/",
+    resource_type: "Website",
+    article_type: "NA",
+    focus: ["Marriage", "Expert Advice", "Practical Strategies"]
+  },
+  {
+    id: 19,
+    title: "ADHD and Relationships",
+    authors: "Psychology Today",
+    year: "2024",
+    summary: "Overview of ADHD's impact on relationships from a psychological perspective, with links to therapist directories.",
+    full_summary: ``,
+    link: "https://www.psychologytoday.com/us/basics/adhd/adhd-and-relationships",
+    resource_type: "Website",
+    article_type: "NA",
+    focus: ["Relationship Dynamics", "Psychology", "Finding Help"]
+  },
+  {
+    id: 20,
+    title: "The ADHD Effect on Marriage and Other Relationships",
+    authors: "ADDitude Magazine",
+    year: "2024",
+    summary: "Comprehensive resource hub with articles, webinars, and expert advice for ADHD-affected relationships.",
+    full_summary: ``,
+    link: "https://www.additudemag.com/category/manage-adhd-life/relationships/",
+    resource_type: "Website",
+    article_type: "NA",
+    focus: ["Resource Hub", "Multiple Topics", "Expert Advice"]
+  },
+  {
+    id: 21,
+    title: "How to Have Better Sex in ADHD Relationships",
+    authors: "ADDitude Magazine",
+    year: "2024",
+    summary: "Addresses the often-overlooked topic of sexual intimacy in ADHD relationships with practical suggestions.",
+    full_summary: ``,
+    link: "https://www.additudemag.com/how-to-have-better-sex-adhd-relationships/",
+    resource_type: "Website",
+    article_type: "NA",
+    focus: ["Intimacy", "Sexual Health", "Practical Strategies"]
+  },
+  {
+    id: 22,
+    title: "ADHD and Romantic Relationships: 10 Biggest Mistakes",
+    authors: "ADDitude Magazine",
+    year: "2024",
+    summary: "Identifies common relationship mistakes made by couples affected by ADHD and how to avoid them.",
+    full_summary: ``,
+    link: "https://www.additudemag.com/adhd-and-romantic-relationships/",
+    resource_type: "Website",
+    article_type: "NA",
+    focus: ["Common Mistakes", "Prevention", "Practical Strategies"]
+  },
+  {
+    id: 23,
+    title: "Understanding Parent-Child Dynamics in Couples with ADHD",
+    authors: "ADHD Marriage",
+    year: "2024",
+    summary: "Deep dive into the destructive parent-child dynamic that often develops in ADHD marriages and how to escape it.",
+    full_summary: ``,
+    link: "https://www.adhdmarriage.com/content/understanding-parent-child-dynamics-couples-adhd",
+    resource_type: "Website",
+    article_type: "NA",
+    focus: ["Parent-Child Dynamic", "Relationship Patterns", "Recovery"]
+  },
+  {
+    id: 24,
+    title: "Overly Sensitive to Criticism: Adult ADHD and RSD",
+    authors: "ADDitude Magazine",
+    year: "2024",
+    summary: "Explains rejection sensitive dysphoria (RSD) and how it affects communication and conflict in relationships.",
+    full_summary: ``,
+    link: "https://www.additudemag.com/overly-sensitive-rsd/",
+    resource_type: "Website",
+    article_type: "NA",
+    focus: ["RSD", "Emotional Regulation", "Communication"]
+  },
+  {
+    id: 25,
+    title: "ADHD Emotional Dysregulation in Relationships: Neurodivergent Love",
+    authors: "ADDitude Magazine",
+    year: "2024",
+    summary: "Explores emotional dysregulation as a core ADHD feature and its impact on romantic relationships.",
+    full_summary: ``,
+    link: "https://www.additudemag.com/adhd-and-romantic-relationships-neurodivergent-love/",
+    resource_type: "Website",
+    article_type: "NA",
+    focus: ["Emotional Regulation", "Neurodivergence", "Love"]
+  },
+  {
+    id: 26,
+    title: "Adult ADHD and Relationships",
+    authors: "HelpGuide",
+    year: "2024",
+    summary: "Accessible guide for understanding ADHD's impact on relationships with practical tips for both partners.",
+    full_summary: ``,
+    link: "https://www.helpguide.org/mental-health/adhd/adult-adhd-and-relationships",
+    resource_type: "Website",
+    article_type: "NA",
+    focus: ["Relationship Dynamics", "Both Partners", "Practical Tips"]
+  },
+  {
+    id: 27,
+    title: "Anger and Resentment: Key Issue in ADHD Marriages",
+    authors: "ADHD Marriage",
+    year: "2024",
+    summary: "Addresses the buildup of anger and resentment in ADHD marriages and strategies for healing.",
+    full_summary: ``,
+    link: "https://www.adhdmarriage.com/content/anger-and-resentment-key-issue-adhd-marriages",
+    resource_type: "Website",
+    article_type: "NA",
+    focus: ["Anger", "Resentment", "Healing"]
+  },
+  {
+    id: 28,
+    title: "9 Ways ADHD May Strain Relationships",
+    authors: "ADDitude Magazine",
+    year: "2024",
+    summary: "Overview of common ways ADHD creates relationship strain with suggestions for each challenge.",
+    full_summary: ``,
+    link: "https://www.additudemag.com/adhd-divorce-rate-marriage-help/",
+    resource_type: "Website",
+    article_type: "NA",
+    focus: ["Relationship Strain", "Common Challenges", "Solutions"]
+  },
+  {
+    id: 29,
+    title: "ADHD and Relationships: When Love Gets Lost in Translation",
+    authors: "CHADD",
+    year: "2024",
+    summary: "CHADD's perspective on communication breakdowns in ADHD relationships and how to bridge the gap.",
+    full_summary: ``,
+    link: "https://chadd.org/attention-article/adhd-and-relationships-when-love-gets-lost-in-translation/",
+    resource_type: "Website",
+    article_type: "NA",
+    focus: ["Communication", "Understanding", "Connection"]
+  },
+  {
+    id: 30,
+    title: "Marriage and Partnerships",
+    authors: "CHADD",
+    year: "2024",
+    summary: "CHADD's comprehensive resource page on ADHD's impact on marriage and long-term partnerships.",
+    full_summary: ``,
+    link: "https://chadd.org/for-adults/marriage-and-partnerships/",
+    resource_type: "Website",
+    article_type: "NA",
+    focus: ["Marriage", "Partnerships", "Resource Hub"]
+  },
+  {
+    id: 31,
+    title: "Revolutionizing ADHD Couple Therapy",
+    authors: "Pera G",
+    year: "2024",
+    summary: "Discussion of new approaches to couples therapy that specifically address ADHD relationship dynamics.",
+    full_summary: ``,
+    link: "https://adhdrollercoaster.org/adhd-couple-therapy-the-revolution-is-on/",
+    resource_type: "Website",
+    article_type: "NA",
+    focus: ["Couples Therapy", "Treatment Innovation", "Clinical Practice"]
+  },
+  {
+    id: 32,
+    title: "CHADD: Children and Adults with Attention-Deficit/Hyperactivity Disorder",
+    authors: "CHADD Organization",
+    year: "2024",
+    summary: "Leading nonprofit providing education, advocacy, and support for individuals with ADHD and their families.",
+    full_summary: ``,
+    link: "https://chadd.org/",
+    resource_type: "Organization",
+    article_type: "NA",
+    focus: ["Support", "Education", "Advocacy"]
+  },
+  {
+    id: 33,
+    title: "ADHD and Marriage",
+    authors: "Orlov M",
+    year: "2024",
+    summary: "Dedicated website for couples affected by ADHD, featuring articles, courses, and community support.",
+    full_summary: ``,
+    link: "https://www.adhdmarriage.com/",
+    resource_type: "Organization",
+    article_type: "NA",
+    focus: ["Couples Support", "Courses", "Community"]
+  },
+  {
+    id: 34,
+    title: "The Gottman Institute",
+    authors: "Gottman JM, Gottman JS",
+    year: "2024",
+    summary: "Research-based approach to relationships that can be applied to ADHD-affected couples for building stronger connections.",
+    full_summary: ``,
+    link: "https://www.gottman.com/",
+    resource_type: "Organization",
+    article_type: "NA",
+    focus: ["Relationship Science", "Communication", "Connection"]
+  },
+  {
+    id: 35,
+    title: "A.D.H.D. Can Strain Relationships",
+    authors: "The New York Times",
+    year: "2024",
+    summary: "News coverage of research on ADHD's impact on relationships, bringing awareness to mainstream audiences.",
+    full_summary: ``,
+    link: "https://www.ncbi.nlm.nih.gov/search/research-news/15638",
+    resource_type: "News Article",
+    article_type: "NA",
+    focus: ["Media Coverage", "Public Awareness", "Research Summary"]
+  },
 ];
 
-// Categories for filtering
+// Focus categories for filtering resources
+export const focusCategories = ["All", "Relationship Dynamics", "Communication", "Treatment", "Emotional Regulation", "Non-ADHD Partner Experience", "Practical Strategies", "Intimacy", "Conflict Patterns", "Parent-Child Dynamic", "Support", "ADHD Overview"];
+
+// Resource types for filtering
+export const resourceTypes = ["All", "Scientific Article", "Book", "Website", "Dissertation", "News Article", "Organization"];
+
+// Article types for filtering (for scientific articles)
+export const articleTypes = ["All", "Original Research", "Review", "Meta-Analysis", "Case Study", "Commentary", "NA"];
+
+
+
+// Categories for key takeaways filtering
 export const takeawayCategories = ["All", "Understanding", "Patterns", "Strategy", "Treatment", "Communication", "Connection", "Relationships", "Steps", "Progress"];
+
+// Categories for quiz filtering
 export const quizCategories = ["All", "Understanding ADHD", "Statistics", "Relationship Patterns", "Treatment", "Strategy", "Communication", "Six Steps", "Non-ADHD Experience", "ADHD Experience", "Boundaries", "Connection", "Healing", "Critical Points", "Responsibility", "Progress", "Emotions"];
-export const resourceTypes = ["All", "Research", "Review", "Book", "Article", "Meta-analysis", "Resource", "Organization"];

@@ -472,7 +472,7 @@ export default function Quiz() {
                       <SelectValue placeholder="Select category" />
                     </SelectTrigger>
                     <SelectContent>
-                      {quizCategories.map(category => (
+                      {quizCategories.map((category: string) => (
                         <SelectItem key={category} value={category}>
                           {category}
                         </SelectItem>
@@ -843,7 +843,7 @@ export default function Quiz() {
                       <SelectValue placeholder="Select category" />
                     </SelectTrigger>
                     <SelectContent>
-                      {quizCategories.map(category => (
+                      {quizCategories.map((category: string) => (
                         <SelectItem key={category} value={category}>
                           {category}
                         </SelectItem>

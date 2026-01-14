@@ -271,7 +271,33 @@ The study used validated instruments including the Dyadic Adjustment Scale (DAS)
     authors: "Sedgwick JA, Merwood A, Asherson P",
     year: "2023",
     summary: "Qualitative research exploring how adults with ADHD experience interpersonal relationships and seek support through online communities.",
-    full_summary: ``,
+    full_summary: `This 2023 qualitative study published in BMC Psychiatry provides rich, first-person accounts of how adults with ADHD experience interpersonal relationships and seek support through online communities.
+
+**Study Design:**
+
+The researchers conducted semi-structured interviews with 21 adults diagnosed with ADHD, exploring their relationship experiences and use of online support communities. Thematic analysis was used to identify key patterns.
+
+**Key Findings:**
+
+1. **Relationship Challenges**: Participants described recurring difficulties including:
+   - Forgetting important dates, conversations, and commitments
+   - Difficulty with emotional regulation during conflicts
+   - Feeling misunderstood by partners who don't have ADHD
+   - Struggling to maintain consistent attention during conversations
+   - Impulsivity leading to hurtful comments or decisions
+
+2. **The Value of Online Communities**: Adults with ADHD reported that online communities provided:
+   - Validation that their experiences were shared by others
+   - Practical strategies from people who truly understand
+   - A safe space to discuss relationship struggles without judgment
+   - Hope from seeing others successfully navigate similar challenges
+   - Education about ADHD that helped them understand themselves
+
+3. **Identity and Relationships**: Many participants described a journey of understanding how ADHD shaped their relationship patterns, often only recognizing this after diagnosis.
+
+**Clinical Implications:**
+
+The authors suggest that clinicians should recognize the value of peer support and online communities as supplements to formal treatment. They also emphasize the importance of relationship-focused interventions for adults with ADHD.`,
     link: "https://pmc.ncbi.nlm.nih.gov/articles/PMC10399076/",
     resource_type: "Scientific Article",
     article_type: "Original Research",
@@ -283,7 +309,37 @@ The study used validated instruments including the Dyadic Adjustment Scale (DAS)
     authors: "Wymbs BT, Canu WH, Sacchetti GM, Ranson LM",
     year: "2024",
     summary: "Research examining the mental health impact on non-ADHD female partners, including depression and quality of life outcomes.",
-    full_summary: ``,
+    full_summary: `This 2024 study published in the Journal of Attention Disorders examines the often-overlooked mental health impact on non-ADHD female partners living with someone diagnosed with ADHD.
+
+**Study Overview:**
+
+The researchers surveyed 287 women who were in long-term relationships with partners diagnosed with ADHD, assessing depressive symptoms, quality of life, and relationship satisfaction.
+
+**Key Findings:**
+
+1. **Elevated Depression Rates**: Women living with ADHD partners showed significantly higher rates of depressive symptoms compared to population norms. Nearly 40% met criteria for clinically significant depression.
+
+2. **Quality of Life Impact**: Participants reported reduced quality of life across multiple domains:
+   - Physical health (due to stress and exhaustion)
+   - Psychological well-being
+   - Social relationships
+   - Environmental satisfaction (household management stress)
+
+3. **Mediating Factors**: The relationship between partner's ADHD and the woman's depression was mediated by:
+   - Perceived relationship quality
+   - Level of household responsibility burden
+   - Partner's treatment engagement
+   - Understanding of ADHD as a neurological condition
+
+4. **Protective Factors**: Women who reported better outcomes had:
+   - Partners who were actively engaged in ADHD treatment
+   - Strong social support networks outside the relationship
+   - Access to education about ADHD
+   - Their own mental health support
+
+**Clinical Implications:**
+
+The authors strongly recommend that clinicians treating adults with ADHD should also assess and support their partners' mental health. They suggest couples therapy and psychoeducation as key interventions.`,
     link: "https://pmc.ncbi.nlm.nih.gov/articles/PMC11520260/",
     resource_type: "Scientific Article",
     article_type: "Original Research",
@@ -295,7 +351,46 @@ The study used validated instruments including the Dyadic Adjustment Scale (DAS)
     authors: "Pera G, Robin AL",
     year: "2018",
     summary: "Clinical guide for therapists on evidence-based interventions specifically designed for couples affected by adult ADHD.",
-    full_summary: ``,
+    full_summary: `This 2018 clinical guide published in the Handbook of Evidence-Based Interventions for Children and Adolescents provides therapists with specific interventions for couples affected by adult ADHD.
+
+**Overview:**
+
+Written by Gina Pera and Arthur Robin, both experts in ADHD relationships, this chapter outlines evidence-based therapeutic approaches specifically designed for ADHD-affected couples.
+
+**Key Therapeutic Interventions:**
+
+1. **Psychoeducation Phase**:
+   - Teaching both partners about ADHD neurology
+   - Explaining how symptoms manifest in relationships
+   - Reframing blame as a shared challenge to address
+   - Normalizing their experiences with research data
+
+2. **Communication Training**:
+   - Active listening techniques adapted for ADHD
+   - Structured conversation formats to prevent derailing
+   - Use of written communication for important topics
+   - Scheduled "business meetings" for household management
+
+3. **Behavioral Interventions**:
+   - Creating ADHD-friendly organizational systems
+   - Developing external reminders and accountability structures
+   - Task distribution based on strengths rather than assumptions
+   - Building in regular check-ins and adjustments
+
+4. **Emotional Regulation Work**:
+   - Identifying emotional triggers for both partners
+   - Developing "pause" strategies during conflicts
+   - Processing past hurts and resentments
+   - Building empathy through perspective-taking exercises
+
+5. **Intimacy Rebuilding**:
+   - Addressing the parent-child dynamic
+   - Scheduling quality time and connection
+   - Rebuilding physical and emotional intimacy gradually
+
+**Treatment Considerations:**
+
+The authors emphasize that successful treatment requires both partners to be engaged and that individual therapy may be needed alongside couples work.`,
     link: "https://www.researchgate.net/publication/322694668_Adult_ADHD-Focused_Couple_Therapy_Clinical_Interventions",
     resource_type: "Scientific Article",
     article_type: "Review",
@@ -307,7 +402,42 @@ The study used validated instruments including the Dyadic Adjustment Scale (DAS)
     authors: "Knies KM",
     year: "2018",
     summary: "Doctoral dissertation examining how ADHD symptoms interact with attachment styles and emotional processing in romantic relationships.",
-    full_summary: ``,
+    full_summary: `This 2018 doctoral dissertation from the University of South Carolina provides an in-depth examination of how ADHD symptoms interact with attachment styles and emotional processing in romantic relationships.
+
+**Research Questions:**
+
+The study investigated how ADHD symptoms relate to:
+- Partner attachment style (secure, anxious, avoidant)
+- Ability to recognize emotions in partners
+- Personality traits and their moderating effects
+
+**Key Findings:**
+
+1. **ADHD and Attachment**: Adults with higher ADHD symptoms showed:
+   - Higher rates of insecure attachment styles
+   - More anxious attachment patterns (fear of abandonment)
+   - Difficulty with emotional availability in relationships
+   - Patterns of pursuing then withdrawing from partners
+
+2. **Emotion Recognition Deficits**: Participants with ADHD symptoms showed:
+   - Reduced accuracy in reading partner's facial expressions
+   - Difficulty interpreting tone of voice
+   - Tendency to misread neutral expressions as negative
+   - Slower processing of emotional cues
+
+3. **Personality Interactions**: Certain personality traits moderated the ADHD-relationship connection:
+   - Higher conscientiousness buffered negative effects
+   - Neuroticism amplified relationship difficulties
+   - Openness was associated with better communication
+
+4. **Partner Effects**: Partners of those with ADHD symptoms reported:
+   - Feeling emotionally disconnected
+   - Frustration with inconsistent attention
+   - Uncertainty about their partner's feelings
+
+**Implications:**
+
+The research suggests that interventions targeting emotion recognition and attachment security may be particularly valuable for adults with ADHD in romantic relationships.`,
     link: "https://scholarcommons.sc.edu/cgi/viewcontent.cgi?params=/context/etd/article/5775/&path_info=Knies_sc_0202A_15265.pdf",
     resource_type: "Dissertation",
     article_type: "Original Research",
@@ -319,7 +449,44 @@ The study used validated instruments including the Dyadic Adjustment Scale (DAS)
     authors: "Faraone SV, Asherson P, Banaschewski T, et al.",
     year: "2015",
     summary: "Comprehensive Lancet review covering ADHD across the lifespan, including impacts on adult relationships and family functioning.",
-    full_summary: ``,
+    full_summary: `This comprehensive 2015 Lancet review by Faraone and colleagues provides an authoritative overview of ADHD across the lifespan, including significant discussion of relationship and family impacts.
+
+**Scope:**
+
+This is one of the most cited ADHD reviews, synthesizing research on epidemiology, neurobiology, assessment, and treatment of ADHD from childhood through adulthood.
+
+**Key Points Relevant to Relationships:**
+
+1. **ADHD Persistence into Adulthood**: The review confirms that ADHD persists into adulthood in approximately 50-65% of cases, meaning millions of adults are navigating relationships with ADHD.
+
+2. **Functional Impairments**: Adults with ADHD show impairments in:
+   - Occupational functioning
+   - Educational achievement
+   - **Interpersonal relationships and marriage**
+   - Parenting
+   - Financial management
+
+3. **Relationship-Specific Findings**:
+   - Higher rates of divorce and relationship instability
+   - More frequent relationship conflicts
+   - Difficulties with emotional regulation affecting partners
+   - Parenting challenges that create family stress
+
+4. **Neurobiological Basis**: The review explains the brain differences underlying ADHD:
+   - Dopamine and norepinephrine dysregulation
+   - Prefrontal cortex differences affecting executive function
+   - Reward system differences affecting motivation
+   - These differences help explain relationship challenges
+
+5. **Treatment Effectiveness**: Evidence shows that treatment improves:
+   - Core ADHD symptoms
+   - Quality of life
+   - Functional outcomes including relationships
+   - Both medication and behavioral interventions are effective
+
+**Clinical Relevance:**
+
+The review emphasizes that comprehensive ADHD treatment should address all life domains, including relationships and family functioning.`,
     link: "https://pubmed.ncbi.nlm.nih.gov/27189265/",
     resource_type: "Scientific Article",
     article_type: "Review",
@@ -331,7 +498,34 @@ The study used validated instruments including the Dyadic Adjustment Scale (DAS)
     authors: "Polanczyk G, de Lima MS, Horta BL, Biederman J, Rohde LA",
     year: "2007",
     summary: "Meta-analysis establishing worldwide ADHD prevalence rates, providing context for understanding how many couples are affected.",
-    full_summary: ``,
+    full_summary: `This landmark 2007 meta-analysis published in the American Journal of Psychiatry established worldwide ADHD prevalence rates, providing essential context for understanding how many couples are affected.
+
+**Study Design:**
+
+The researchers analyzed 102 studies comprising 171,756 subjects from all world regions to determine the pooled prevalence of ADHD.
+
+**Key Findings:**
+
+1. **Worldwide Prevalence**: The pooled prevalence of ADHD was 5.29% among children and adolescents worldwide.
+
+2. **Adult Prevalence**: Subsequent research building on this work estimates adult ADHD prevalence at 2.5-4%, meaning:
+   - Tens of millions of adults worldwide have ADHD
+   - A significant percentage of marriages include at least one partner with ADHD
+   - Many couples are navigating these challenges without diagnosis or support
+
+3. **Geographic Consistency**: ADHD rates were relatively consistent across regions when using standardized diagnostic criteria, confirming ADHD as a universal condition.
+
+4. **Diagnostic Variability**: Differences in reported prevalence were largely explained by methodological differences rather than true geographic variation.
+
+**Implications for Relationships:**
+
+Understanding that ADHD affects approximately 1 in 20 adults helps couples recognize:
+- They are not alone in their struggles
+- Resources and support are available
+- Their challenges have a neurological basis
+- Treatment can make a significant difference
+
+This prevalence data has been crucial in advocating for adult ADHD services and relationship support resources.`,
     link: "https://pubmed.ncbi.nlm.nih.gov/22976615/",
     resource_type: "Scientific Article",
     article_type: "Meta-Analysis",
@@ -343,7 +537,41 @@ The study used validated instruments including the Dyadic Adjustment Scale (DAS)
     authors: "Orlov M",
     year: "2010",
     summary: "The foundational book on ADHD in marriage, describing common patterns and providing the six-step approach to rebuilding relationships.",
-    full_summary: ``,
+    full_summary: `**The ADHD Effect on Marriage** by Melissa Orlov (2010) is the foundational book on understanding and healing ADHD-affected marriages.
+
+**Overview:**
+
+Melissa Orlov, who writes from personal experience as a non-ADHD spouse, combines research, clinical wisdom, and real-world stories to create a comprehensive guide for couples.
+
+**Key Contributions:**
+
+1. **The Six Steps Framework**: The book introduces a structured approach to healing:
+   - Step 1: Cultivate Empathy
+   - Step 2: Address Obstacle Emotions
+   - Step 3: Get Treatment for Both Partners
+   - Step 4: Improve Communication
+   - Step 5: Set Boundaries
+   - Step 6: Reignite Romance
+
+2. **Pattern Recognition**: Orlov identifies destructive patterns common in ADHD marriages:
+   - The parent-child dynamic
+   - The chore wars
+   - The hyperfocus courtship followed by withdrawal
+   - The symptom-response-response cycle
+
+3. **Both Partners' Perspectives**: Uniquely, the book validates both:
+   - The ADHD spouse's experience of shame and feeling misunderstood
+   - The non-ADHD spouse's exhaustion and loneliness
+
+4. **Practical Strategies**: Concrete tools including:
+   - Learning conversations
+   - Verbal cues for difficult moments
+   - ADHD-sensitive organizational systems
+   - Ways to rebuild intimacy
+
+**Impact:**
+
+This book has helped thousands of couples understand that their struggles have a name and that recovery is possible. It remains the most recommended resource for ADHD-affected marriages.`,
     link: "https://www.adhdmarriage.com/content/adhd-effect-marriage",
     resource_type: "Book",
     article_type: "NA",
@@ -355,7 +583,45 @@ The study used validated instruments including the Dyadic Adjustment Scale (DAS)
     authors: "Orlov M, Kohlenberger N",
     year: "2014",
     summary: "Practical guide offering specific strategies for couples affected by ADHD, including communication techniques and ways to rebuild intimacy.",
-    full_summary: ``,
+    full_summary: `**The Couple's Guide to Thriving with ADHD** by Melissa Orlov and Nancie Kohlenberger (2014) provides practical, actionable strategies for couples affected by ADHD.
+
+**Overview:**
+
+Building on Orlov's first book, this guide offers more detailed, step-by-step strategies for implementing change in ADHD-affected relationships.
+
+**Key Features:**
+
+1. **Practical Exercises**: Each chapter includes exercises couples can do together:
+   - Communication practice scripts
+   - Empathy-building activities
+   - Conflict resolution worksheets
+   - Goal-setting frameworks
+
+2. **Communication Deep Dive**: Extensive coverage of:
+   - How ADHD affects listening and attention
+   - Techniques for ensuring messages are received
+   - Managing emotional flooding during discussions
+   - Creating safety for difficult conversations
+
+3. **Intimacy Rebuilding**: Specific strategies for:
+   - Escaping the parent-child dynamic
+   - Rebuilding physical connection
+   - Creating emotional intimacy
+   - Managing different needs for stimulation
+
+4. **Real Couple Stories**: Case studies showing:
+   - How couples implemented strategies
+   - Common obstacles and how to overcome them
+   - What recovery looks like in practice
+
+5. **Treatment Integration**: Guidance on:
+   - Working with therapists effectively
+   - Maximizing medication benefits
+   - Building sustainable habits
+
+**Unique Value:**
+
+The book's strength is its practicality—couples can immediately implement the strategies without needing a therapist, though professional support is recommended for couples in crisis.`,
     link: "https://www.adhdmarriage.com/resources/books/couples-guide-thriving-adhd",
     resource_type: "Book",
     article_type: "NA",
@@ -367,7 +633,40 @@ The study used validated instruments including the Dyadic Adjustment Scale (DAS)
     authors: "Hallowell EM, Ratey JJ",
     year: "2011",
     summary: "Landmark book that helped bring adult ADHD into public awareness, including extensive discussion of relationship impacts.",
-    full_summary: ``,
+    full_summary: `**Driven to Distraction** by Edward Hallowell and John Ratey (first published 1994, revised 2011) is the landmark book that brought adult ADHD into public awareness.
+
+**Historical Significance:**
+
+Before this book, ADHD was primarily seen as a childhood condition. Hallowell and Ratey, both psychiatrists with ADHD themselves, demonstrated that ADHD persists into adulthood and profoundly affects all life domains.
+
+**Key Contributions:**
+
+1. **Adult ADHD Recognition**: The book helped millions recognize themselves or their partners:
+   - Vivid descriptions of the ADHD experience
+   - Case studies across professions and life stages
+   - Validation that struggles had a neurological basis
+
+2. **Relationship Insights**: Extensive discussion of how ADHD affects relationships:
+   - The "race car brain with bicycle brakes" metaphor
+   - Why ADHD partners seem to "not care" when they actually do
+   - The impact of inconsistent attention on partners
+   - How hyperfocus in courtship creates unrealistic expectations
+
+3. **Strengths-Based Perspective**: Unlike purely deficit-focused views:
+   - Creativity and innovation
+   - Ability to hyperfocus on interesting tasks
+   - Energy and enthusiasm
+   - Willingness to take risks
+
+4. **Treatment Overview**: Practical guidance on:
+   - Finding appropriate diagnosis
+   - Medication options and considerations
+   - Behavioral strategies
+   - Environmental modifications
+
+**Lasting Impact:**
+
+This book remains essential reading for anyone wanting to understand ADHD from the inside out. Its compassionate, hopeful tone has helped reduce shame and encourage treatment-seeking.`,
     link: "https://drhallowell.com/read/books-by-ned/",
     resource_type: "Book",
     article_type: "NA",
@@ -379,7 +678,44 @@ The study used validated instruments including the Dyadic Adjustment Scale (DAS)
     authors: "Barkley RA",
     year: "2021",
     summary: "Comprehensive guide by leading ADHD researcher with science-based strategies for managing ADHD in all life domains including relationships.",
-    full_summary: ``,
+    full_summary: `**Taking Charge of Adult ADHD** by Russell Barkley (2nd edition 2021) is the definitive science-based guide for managing ADHD in adulthood.
+
+**Author Credentials:**
+
+Dr. Russell Barkley is one of the world's leading ADHD researchers, having published over 270 scientific articles and 27 books on ADHD.
+
+**Key Features:**
+
+1. **Scientific Foundation**: Every recommendation is grounded in research:
+   - Clear explanations of ADHD neuroscience
+   - Evidence-based treatment approaches
+   - Realistic expectations based on outcome studies
+
+2. **Executive Function Focus**: Barkley's model emphasizes:
+   - ADHD as primarily an executive function disorder
+   - Difficulties with self-regulation, not just attention
+   - The role of working memory, emotional regulation, and time management
+
+3. **Relationship Chapter**: Dedicated coverage of:
+   - How ADHD affects intimate relationships
+   - Communication strategies for couples
+   - Managing household responsibilities
+   - Parenting challenges when a parent has ADHD
+
+4. **Practical Strategies**: Concrete tools including:
+   - External reminder systems
+   - Time management techniques
+   - Organizational strategies
+   - Medication optimization
+
+5. **Self-Assessment Tools**: Includes:
+   - Symptom checklists
+   - Impairment assessments
+   - Progress monitoring tools
+
+**Unique Value:**
+
+Barkley's book is particularly valuable for its scientific rigor and practical applicability. It helps readers understand not just what to do, but why strategies work based on ADHD neuroscience.`,
     link: "https://www.guilford.com/books/Taking-Charge-of-Adult-ADHD/Russell-Barkley/9781462546855",
     resource_type: "Book",
     article_type: "NA",
@@ -523,7 +859,47 @@ The study used validated instruments including the Dyadic Adjustment Scale (DAS)
     authors: "ADHD Marriage",
     year: "2024",
     summary: "Deep dive into the destructive parent-child dynamic that often develops in ADHD marriages and how to escape it.",
-    full_summary: ``,
+    full_summary: `This article from ADHD Marriage provides an in-depth exploration of the parent-child dynamic—the most destructive pattern in ADHD-affected relationships.
+
+**What Is the Parent-Child Dynamic?**
+
+In this pattern, one spouse (usually the non-ADHD partner) becomes the responsible "parent" while the other becomes the irresponsible "child." This dynamic develops gradually and destroys romantic connection.
+
+**How It Develops:**
+
+1. **Initial Phase**: The non-ADHD partner notices tasks aren't getting done
+2. **Compensation**: They start taking over "temporarily"
+3. **Criticism**: They become frustrated and critical
+4. **Withdrawal**: The ADHD partner feels attacked and withdraws
+5. **Escalation**: The non-ADHD partner takes on even more
+6. **Entrenchment**: Both become locked in their roles
+
+**Why It's Devastating:**
+
+1. **Kills Sexual Attraction**: It's nearly impossible to be sexually attracted to someone you parent
+2. **Creates Resentment**: The "parent" feels like a single parent; the "child" feels controlled
+3. **Reinforces Symptoms**: The ADHD partner has less motivation to manage symptoms
+4. **Damages Self-Esteem**: Both partners feel bad about who they've become
+
+**Breaking the Pattern:**
+
+1. **ADHD Partner Must**:
+   - Take ownership of symptom management
+   - Follow through on commitments
+   - Use external systems for accountability
+   - Accept feedback without defensiveness
+
+2. **Non-ADHD Partner Must**:
+   - Let go of control
+   - Allow natural consequences
+   - Stop nagging and reminding
+   - Focus on their own behavior
+
+3. **Both Partners Must**:
+   - Recognize the pattern
+   - Commit to change
+   - Seek professional help if needed
+   - Be patient with the process`,
     link: "https://www.adhdmarriage.com/content/understanding-parent-child-dynamics-couples-adhd",
     resource_type: "Website",
     article_type: "NA",
@@ -535,7 +911,45 @@ The study used validated instruments including the Dyadic Adjustment Scale (DAS)
     authors: "ADDitude Magazine",
     year: "2024",
     summary: "Explains rejection sensitive dysphoria (RSD) and how it affects communication and conflict in relationships.",
-    full_summary: ``,
+    full_summary: `This ADDitude Magazine article explains Rejection Sensitive Dysphoria (RSD)—an often-overlooked aspect of ADHD that profoundly affects relationships.
+
+**What Is RSD?**
+
+Rejection Sensitive Dysphoria is an intense emotional response to perceived rejection, criticism, or failure. It's not officially part of ADHD diagnostic criteria but is experienced by most people with ADHD.
+
+**How RSD Manifests:**
+
+1. **Emotional Intensity**: Criticism that might mildly bother others can feel devastating
+2. **Anticipatory Anxiety**: Fear of rejection leads to avoiding situations
+3. **Misinterpretation**: Neutral comments may be perceived as criticism
+4. **Sudden Mood Shifts**: A perceived slight can trigger immediate emotional flooding
+5. **People-Pleasing**: Going to extremes to avoid any possibility of rejection
+
+**Impact on Relationships:**
+
+1. **Communication Breakdown**:
+   - Partners afraid to give feedback
+   - ADHD partner becomes defensive
+   - Important issues go unaddressed
+   - Resentment builds on both sides
+
+2. **Conflict Escalation**:
+   - Minor disagreements become major fights
+   - ADHD partner may shut down or explode
+   - Partner feels they're "walking on eggshells"
+
+3. **Intimacy Barriers**:
+   - Fear of vulnerability
+   - Difficulty accepting love
+   - Pushing partners away before they can reject
+
+**Management Strategies:**
+
+1. **Medication**: Some ADHD medications help; alpha-agonists may be particularly effective
+2. **Cognitive Strategies**: Learning to pause before reacting
+3. **Communication**: Letting partners know about RSD
+4. **Therapy**: Processing past rejection experiences
+5. **Self-Compassion**: Recognizing RSD as neurological, not a character flaw`,
     link: "https://www.additudemag.com/overly-sensitive-rsd/",
     resource_type: "Website",
     article_type: "NA",
@@ -559,7 +973,50 @@ The study used validated instruments including the Dyadic Adjustment Scale (DAS)
     authors: "HelpGuide",
     year: "2024",
     summary: "Accessible guide for understanding ADHD's impact on relationships with practical tips for both partners.",
-    full_summary: ``,
+    full_summary: `This HelpGuide article provides an accessible, comprehensive overview of how ADHD affects adult relationships, with practical tips for both partners.
+
+**Overview:**
+
+HelpGuide is known for making mental health information accessible. This article distills complex ADHD-relationship dynamics into understandable concepts with actionable advice.
+
+**Key Topics Covered:**
+
+1. **Understanding the Impact**:
+   - Why ADHD partners seem to "not listen"
+   - The role of working memory in forgetting
+   - How impulsivity affects communication
+   - Why emotional regulation is challenging
+
+2. **Common Relationship Patterns**:
+   - The parent-child dynamic
+   - The nagging-withdrawing cycle
+   - Hyperfocus courtship and its aftermath
+   - Division of labor conflicts
+
+3. **Tips for the ADHD Partner**:
+   - Acknowledge your partner's experience
+   - Take responsibility for treatment
+   - Use external reminders and systems
+   - Practice active listening techniques
+   - Manage emotional reactions
+
+4. **Tips for the Non-ADHD Partner**:
+   - Educate yourself about ADHD
+   - Separate symptoms from character
+   - Avoid becoming the "parent"
+   - Express needs without criticism
+   - Take care of your own mental health
+
+5. **Tips for Both Partners**:
+   - Develop a signal for "time out"
+   - Schedule regular check-ins
+   - Divide tasks based on strengths
+   - Celebrate progress
+   - Seek professional help when needed
+
+**Unique Value:**
+
+The article's strength is its balanced perspective, validating both partners' experiences while providing concrete, immediately applicable strategies.`,
     link: "https://www.helpguide.org/mental-health/adhd/adult-adhd-and-relationships",
     resource_type: "Website",
     article_type: "NA",
@@ -571,7 +1028,50 @@ The study used validated instruments including the Dyadic Adjustment Scale (DAS)
     authors: "ADHD Marriage",
     year: "2024",
     summary: "Addresses the buildup of anger and resentment in ADHD marriages and strategies for healing.",
-    full_summary: ``,
+    full_summary: `This ADHD Marriage article addresses the buildup of anger and resentment—often the most significant obstacles to healing in ADHD-affected relationships.
+
+**The Anger and Resentment Cycle:**
+
+In ADHD marriages, anger and resentment often build over years, creating seemingly insurmountable barriers to connection.
+
+**Sources of Anger:**
+
+1. **Non-ADHD Partner's Anger**:
+   - Exhaustion from carrying responsibilities
+   - Feeling like a single parent
+   - Broken promises and unmet expectations
+   - Loneliness in the relationship
+   - Loss of the partner they thought they married
+
+2. **ADHD Partner's Anger**:
+   - Constant criticism and nagging
+   - Feeling controlled and micromanaged
+   - Never being "good enough"
+   - Having their efforts dismissed
+   - Shame about their struggles
+
+**Why Anger Persists:**
+
+1. **Unaddressed ADHD**: Untreated symptoms continue causing problems
+2. **Lack of Understanding**: Both partners misinterpret the other's behavior
+3. **Accumulated Hurts**: Years of pain create deep wounds
+4. **Defensive Patterns**: Both partners protect themselves rather than connect
+
+**Breaking the Cycle:**
+
+1. **Acknowledge the Anger**: Both partners must recognize their anger is valid
+2. **Understand the Source**: Connect anger to specific experiences and needs
+3. **Address ADHD**: Treatment reduces ongoing triggers
+4. **Process Past Hurts**: May require professional support
+5. **Build New Patterns**: Create positive experiences to counterbalance negative history
+
+**Healing Strategies:**
+
+1. **Individual Work**: Each partner processing their own emotions
+2. **Couples Therapy**: Guided conversations about painful topics
+3. **Forgiveness Practice**: Letting go of past hurts (not excusing behavior)
+4. **New Positive Experiences**: Building a new relationship history
+5. **Patience**: Healing takes time—often as long as the damage took to accumulate`,
     link: "https://www.adhdmarriage.com/content/anger-and-resentment-key-issue-adhd-marriages",
     resource_type: "Website",
     article_type: "NA",

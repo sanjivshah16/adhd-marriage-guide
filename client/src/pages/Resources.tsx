@@ -1,4 +1,5 @@
 import { useState, useMemo } from "react";
+import { renderBoldText } from "@/lib/renderMarkdown";
 import { motion, AnimatePresence } from "framer-motion";
 import { FileText, ExternalLink, Filter, Search, BookOpen, FileSearch, Building2, Newspaper, GraduationCap, ChevronDown, ChevronUp, Tag } from "lucide-react";
 import Navigation from "@/components/Navigation";
@@ -297,7 +298,7 @@ export default function Resources() {
                                               </h4>
                                               {rest.length > 0 && (
                                                 <p className="text-muted-foreground">
-                                                  {rest.join(':**')}
+                                                  {renderBoldText(rest.join(':**'))}
                                                 </p>
                                               )}
                                             </div>
@@ -307,13 +308,13 @@ export default function Resources() {
                                         if (/^\d+\./.test(paragraph.trim())) {
                                           return (
                                             <p key={i} className="mb-2 pl-4">
-                                              {paragraph}
+                                              {renderBoldText(paragraph)}
                                             </p>
                                           );
                                         }
                                         return (
                                           <p key={i} className="mb-4">
-                                            {paragraph}
+                                            {renderBoldText(paragraph)}
                                           </p>
                                         );
                                       })}
